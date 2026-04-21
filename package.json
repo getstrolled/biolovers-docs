@@ -1,0 +1,13 @@
+{
+  "name": "biolovers-help",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mintlify help center for biolovers.site (deployed to help.biolovers.site).",
+  "scripts": {
+    "dev": "mint dev",
+    "broken-links": "mint broken-links"
+  },
+  "devDependencies": {
+    "mint": "latest"
+  }
+}

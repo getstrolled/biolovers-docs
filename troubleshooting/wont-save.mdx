@@ -1,0 +1,44 @@
+---
+title: "My changes won't save"
+description: "What to try when the dashboard refuses to save or shows 'Invalid customization'."
+keywords: ["wont save", "save fails", "save error", "invalid customization", "changes lost", "draft", "save widgets", "missing save", "save button", "didnt save", "lost work", "autosave"]
+---
+
+The whole dashboard **autosaves**. There is no Save button on any panel — including the **Widgets editor**, which debounces every change and pushes it after a short pause. You will see a small "Saved" / "Saving…" indicator near the top of the editor when changes go through.
+
+## Quick checklist
+
+1. **Are you signed in?** A stale session can quietly log you out — refresh and try again.
+2. **Did you just change a "Premium" field on a free account?** Free accounts get rejected silently for Premium-only options. Switch the field back, or buy [Premium](/premium/what-premium-unlocks).
+3. **Did the page show "Invalid customization"?** That's a validation error — see below.
+4. **Internet flaky?** The dashboard does not show a banner when you go offline; check your connection and reload the page if the indicator stays on "Saving…" for more than a few seconds.
+
+## Widgets
+
+The widgets editor **autosaves on every edit** (debounced — give it ~1–2 seconds after you stop typing).
+
+If the save call fails — usually because a value didn't pass schema validation — the editor surfaces an inline error on the offending widget and **the next valid edit will retry the save**. Common reasons a widget save fails:
+
+- **Embed URL not recognised** — for the YouTube embed kind, paste a `youtube.com/watch?v=` or `youtu.be/...` URL, not a homepage / channel link.
+- **Steam profile URL is invalid** — paste a `steamcommunity.com/id/...` or `steamcommunity.com/profiles/76561...` URL.
+- **Image too large** — gear-shelf, portfolio, and infobox images cap at 2 MiB; resize and re-upload.
+- **Too many entries** — embed widgets max out at 12 entries, gear shelf at 48 items, portfolio at 60 images / 12 clips. Remove one before adding another.
+
+## "Invalid customization"
+
+This means the data you tried to save didn't pass our schema check. The dashboard shows the offending field — fix it and re-save. Common ones:
+
+- An empty URL where one is required.
+- A negative number where positive is required (e.g. font size).
+- A field set to a value the platform doesn't allow (e.g. an unsupported widget type).
+- A character limit overrun (bio: 200 chars; infobox: 12,000 chars; alias slug: 32 chars).
+
+## Still stuck?
+
+Open a thread in [Discord](https://biolovers.site/discord) with:
+
+- Your username.
+- The panel you're on.
+- A screenshot of the error.
+
+We can usually point at the exact field within minutes.

@@ -1,0 +1,92 @@
+---
+title: "Earned badges"
+description: "Site badges next to your name on the public profile — Premium, Verified, Donator tiers (Bronze / Silver / Gold), Server Booster, Owner, Staff."
+keywords: ["badge", "badges", "earned badges", "site badges", "recognition", "achievements", "icons", "verified badge", "premium badge", "donator badge", "bronze", "silver", "gold", "guardian", "legend", "boost badge", "server booster", "staff badge", "owner badge", "checkmark", "next to name"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/badges" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/badges</a>
+</Note>
+
+Site badges are small icons next to your display name on your public profile. Some are **earned** (we add them automatically when you qualify); some are **bought** (Verified, Custom badges); some are **manual** (Owner, Staff).
+
+<Frame caption="Badges panel.">
+  <img src="/images/dashboard/badges-earned.png" alt="Badges panel" />
+</Frame>
+
+## Site badges
+
+These are the slugs that can appear next to your name (`Profile.siteBadges`). Labels and icons come from the admin-managed catalog (`BadgeDefinition`).
+
+| Slug | Default label | How you get it |
+|------|---------------|----------------|
+| `owner` | Owner | Granted by the team — owners of biolovers.site. |
+| `staff` | Staff | Granted by the team to staff members. Cannot be bought. |
+| `premium` | Premium | Auto-applied while your account has Premium. |
+| `donator_bronze` | (catalog) | Lifetime donations ≥ **$10**. |
+| `donator_silver` | (catalog) | Lifetime donations ≥ **$50**. |
+| `donator_gold` | (catalog) | Lifetime donations ≥ **$100**. |
+| `discord_booster` | (catalog) | Auto-synced when you **boost the Biolovers Discord server** (the bot listens for `guildMemberUpdate` / `Add` / `Remove` and toggles the badge). |
+| Custom | (your label) | Bought slots, your own image. See [Custom badges](/badges/custom-badges). |
+
+Only the **highest donator tier** ever shows (`applyDonatorTierReplace`) — bronze is replaced by silver when you cross into silver, and so on.
+
+## Discord profile badges (separate)
+
+Quest, Pomelo migration, Nitro flags, HypeSquad, etc. are **Discord** badges fetched from your linked Discord account. They render on the **Discord presence card** (when you've enabled "Show profile badges") — they are **not** site-level badges next to your display name.
+
+## Bought separately
+
+| Badge | How you get it |
+|-------|----------------|
+| **Verified** | One-time **$19.99** purchase. See [Verified](/premium/verified). Manually granted by staff on application instead. |
+| **Custom badges** | Buy slots, upload your own images. See [Custom badges](/badges/custom-badges). |
+
+## Where badges show
+
+- **Next to your display name** on the public profile.
+- **Inside the stats line** *(optional)* — toggle on the [Stats panel](/profile/stats-corner) to compact them onto the meta row.
+- **Custom badges** appear after earned ones, in the order you set them in the panel.
+
+## Order
+
+Earned badges are sorted by the catalog's `sortOrder` first, then a default `SITE_BADGE_ORDER` (`owner` → `staff` → `donator` → `premium`). Custom badges follow.
+
+## Hover text
+
+Hover any badge to see its `description`. For custom badges this is the **Hover message** field you set when you uploaded the image (max 20 chars).
+
+## Hide a badge
+
+Toggle **Show on profile** off for any badge — it stays earned but disappears from the public page (`siteBadgesHidden` on the profile).
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="I have Premium / Verified / Donator but the badge isn't showing">
+    Check the **Show on profile** toggle for that badge in this panel. If it's on and still missing, sign out + sign back in to refresh your session.
+  </Accordion>
+  <Accordion title="When does the donator badge upgrade tiers?">
+    The instant a payment lands. So if you donate $5 today and $5 tomorrow, the bronze badge appears the moment your lifetime crosses $10.
+  </Accordion>
+  <Accordion title="Is the booster badge based on Nitro?">
+    No — it's based on **boosting the Biolovers Discord server**. Linking Discord without boosting doesn't grant it.
+  </Accordion>
+  <Accordion title="Can I hide a badge I earned?">
+    Yes — toggle **Show on profile** off for that badge. The badge stays earned, just doesn't appear publicly.
+  </Accordion>
+  <Accordion title="Where are the Quest / Pomelo badges?">
+    Those are **Discord** profile badges, shown on the Discord presence card (when "Show profile badges" is on). They aren't site badges next to your display name.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Custom badges" icon="palette" href="/badges/custom-badges">
+    Upload your own badge images.
+  </Card>
+  <Card title="Verified" icon="badge-check" href="/premium/verified">
+    The blue checkmark.
+  </Card>
+</CardGroup>

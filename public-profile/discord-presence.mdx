@@ -1,0 +1,34 @@
+---
+title: "Discord presence card (visitor view)"
+description: "What the live Discord tile looks like to visitors and how it updates."
+keywords: ["discord card", "discord presence", "presence card", "now playing card", "live tile", "discord activity", "currently playing", "spotify in discord", "discord status", "online", "idle", "offline"]
+---
+
+The Discord presence card is the **live tile** that shows what you're up to right now in Discord. It's powered by your real-time Discord status (the green dot, the game you're playing, the song on Spotify, etc.).
+
+## What visitors see
+
+| State | What the card shows |
+|-------|---------------------|
+| **Online** | Green dot + "Online". |
+| **Idle** | Yellow moon + "Idle". |
+| **Do Not Disturb** | Red dot + "DND". |
+| **Offline / Invisible / not sharing a server with the bot** | Grey dot + "Offline". |
+| **Playing a game** | Game name + game icon (when Discord has one) + how long you've been playing. |
+| **Listening on Spotify** | Song + artist + album art + a little progress bar. |
+| **Coding (VS Code, JetBrains, etc.)** | File name + workspace + how long. |
+| **Custom status** | Your custom text + emoji. |
+
+Multiple activities stack — e.g. "Playing Minecraft" + "Listening to Spotify" both show.
+
+## How it updates
+
+The card is **live**. It is powered by the **Biolovers Discord bot** connected to Discord's gateway — when your status changes, the bot pushes the new presence to your profile within a couple of seconds. There is no Lanyard relay involved — the bot itself emits the data.
+
+You **must share at least one server with the bot** for the live data to flow. The Biolovers community Discord is the easiest way; any server the bot is in works. Without that, the card stays Offline (with a "Join our Discord" call-to-action).
+
+Setting your Discord status to **Invisible** also reads as Offline by design — Discord doesn't broadcast presence for invisible users, so neither do we.
+
+## Where to set it up
+
+[Discord & Telegram panel](/connections/discord-telegram).

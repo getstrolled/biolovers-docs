@@ -1,0 +1,87 @@
+---
+title: "Widgets overview"
+description: "Extra blocks on your profile — markdown infobox, embed, gear shelf, portfolio, Steam inventory, plus three legacy single-link types."
+keywords: ["widget", "widgets", "blocks", "extras", "extra content", "premium", "pages", "scroll", "scroll hint", "scroll pages", "scroll for more", "embed", "embeds", "iframe", "youtube widget", "discord invite widget", "telegram widget", "infobox", "markdown block", "gear", "gear shelf", "portfolio", "steam", "inventory", "steam inventory", "split profile", "sections"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/pages/widgets</a>
+</Note>
+
+Widgets are the **extra blocks** on your profile beyond your bio and links. The schema accepts up to **16 widgets total** per profile.
+
+<Frame caption="Widgets editor.">
+  <img src="/images/dashboard/pages-widgets-list.png" alt="Widgets editor" />
+</Frame>
+
+## The widget types
+
+The `profileWidgetSchema` is a union of **eight** widget shapes. Five are first-class types you can add new instances of from the dashboard:
+
+<CardGroup cols={2}>
+  <Card title="Infobox (Markdown)" icon="file-lines" href="/widgets/markdown-infobox">
+    A formatted text block (markdown subset). Per-widget custom font.
+  </Card>
+  <Card title="Embed (YouTube + multi-link)" icon="link" href="/widgets/embed">
+    Up to 12 mixed entries: YouTube videos, Discord invites, Telegram links, generic iframes, link buttons.
+  </Card>
+  <Card title="Gear shelf" icon="cart-shopping" href="/widgets/gear-shelf">
+    A "what I use" grid — up to 48 product cards.
+  </Card>
+  <Card title="Portfolio" icon="images" href="/widgets/portfolio">
+    Up to 60 images + 12 video clip URLs (YouTube, Twitch, Streamable, Kick).
+  </Card>
+  <Card title="Steam inventory" icon="gamepad" href="/widgets/steam-inventory">
+    Pull your CS2 / Dota 2 / TF2 inventory from Steam.
+  </Card>
+</CardGroup>
+
+The other three shapes — `telegram`, `discord_invite`, and `iframe` — are **legacy single-URL widgets** kept readable so older profiles still render. New widgets of these shapes get created as **entries** inside the unified Embed widget instead.
+
+## How saving works
+
+Widgets **autosave** on a ~900 ms debounce after every change. There is no Save button on this panel — when you stop typing / clicking, the change is persisted to the server. A spinner near the editor header indicates an in-flight save.
+
+Validation runs on save. If the server rejects a widget (bad URL, missing image, etc.) the editor surfaces the error and the autosave retries after the next edit.
+
+## Scroll-for-more pages
+
+You can split widgets into multiple **scroll pages** stacked under your main card. Each widget has a `placement` of either `card` (inside the main profile card) or a section number `1`–`10` (one of the scroll pages).
+
+- Up to **10 scroll pages** per profile (the editor enforces this).
+- Each scroll page can have an optional title (max 80 chars).
+- Mobile especially benefits from scroll pages — small screens fill up fast.
+
+## Where each widget renders
+
+Each widget has a `widgetItemChrome` (for grids of items) and a `widgetBodyChrome` (for prose / single-iframe shells), each one of `solid` / `transparent` / `glass` / `blur`. There is no "clean" chrome.
+
+The **Embed** widget has two display modes:
+
+- **Button mode** — each entry is a clickable card/pill that opens a modal.
+- **Embed mode** — iframes / live embeds render inline.
+
+The **Gear shelf** is special: in card placement it appears as a single button that opens a modal centered inside your card with all the items.
+
+## Tips
+
+- Lead with what you want people to look at. Widgets render top-to-bottom on desktop and on mobile.
+- Big widgets (portfolio, embed grid) on **scroll page 2** keeps your main card lean.
+- The **infobox** is great for an "About this profile" block at the bottom.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My widget changes aren't showing">
+    Widgets autosave ~1 second after you stop editing. If the save spinner doesn't go idle, check the editor banner for an error.
+  </Accordion>
+  <Accordion title="What's the limit?">
+    16 widgets per profile (`max(16)` on the customization schema). Each widget has its own internal limits — 12 embed entries, 48 gear shelf items, 60 portfolio images, etc.
+  </Accordion>
+  <Accordion title="Can I have multiple infoboxes?">
+    Yes. Each one is a separate widget — useful for different sections.
+  </Accordion>
+  <Accordion title="Why do some widget types say 'legacy'?">
+    The single-URL `iframe`, `discord_invite`, and `telegram` widget types are kept readable so existing profiles continue to render. The dashboard now creates these as **entries** inside the unified **Embed widget** instead.
+  </Accordion>
+</AccordionGroup>

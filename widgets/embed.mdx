@@ -1,0 +1,98 @@
+---
+title: "Embed widget (multi-link)"
+description: "Up to 12 entries — YouTube videos, Discord invites, Telegram links, generic iframes, plain link buttons. Two display modes."
+keywords: ["embed", "iframe", "youtube widget", "youtube embed", "discord invite", "telegram", "link button", "media embed", "video widget", "embedded content", "multi link", "link tree", "linktree", "buttons", "thumbnails"]
+---
+
+<Note>
+Add from: <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">Widgets → Add widget → YouTube / embed</a>
+</Note>
+
+A multi-purpose embed block. Think of it as a **mini Linktree inside a widget**: up to 12 entries of mixed type, rendered either as cards-that-open-modals (button mode) or as live iframes (embed mode).
+
+## What an entry can be
+
+The unified embed widget accepts five `EMBED_ENTRY_KINDS`:
+
+| Kind | URL example | Renders as |
+|------|-------------|------------|
+| **`youtube`** | `https://www.youtube.com/watch?v=…` | Embedded YouTube player. |
+| **`iframe`** | Any `https://` URL | Sandboxed iframe with `allow-scripts allow-same-origin allow-popups allow-presentation`. |
+| **`discord_invite`** | `https://discord.gg/…` | Server invite card with online count, fetched from the public guild widget. |
+| **`telegram`** | `https://t.me/…` | A **CTA link tile** — *not* an iframe. Tapping opens Telegram in a new tab. |
+| **`link`** | Any `https://` URL | Plain button — opens in a new tab (no modal). |
+
+The `youtube` literal is kept on disk for backwards compatibility — the widget itself is named "YouTube / embed" in the dashboard and any entry kind is allowed inside it.
+
+## Per-entry fields
+
+| Field | What it does |
+|-------|--------------|
+| **Kind** | Picks one of the five types above. Defaults to `youtube` for legacy `videos[]` rows. |
+| **URL** | The link. Required at save time. Up to 2,048 chars. |
+| **Label** | Pill / card title (max 80 chars). |
+| **Description** *(optional)* | Subtitle text under the label (max 400 chars, plain text — markdown is not parsed here). |
+| **Thumbnail URL** *(optional)* | Override the auto-generated thumbnail (only used in button mode card placement; embed mode renders the live iframe). |
+
+## Display modes
+
+Each widget has **one** mode for **all** its entries:
+
+### Button mode (`embedRender: "button"`, default)
+
+Every entry is a card with thumbnail + label + description. Tapping opens the content in a **modal** centered in your card (so visitors don't navigate away).
+
+Telegram and link entries skip the modal — they open in a new tab directly.
+
+Best for:
+
+- Mixed embeds (YouTube videos + a Discord invite + an external website).
+- Pages where you want a clean grid and don't want auto-playing iframes loading on first paint.
+
+### Embed mode (`embedRender: "embed"`)
+
+Each entry renders **inline**:
+
+- `youtube` / `iframe` — live iframe.
+- `discord_invite` — full server invite card.
+- `telegram` / `link` — still a CTA link tile (no inline iframe — `t.me` doesn't allow embedding).
+
+Best for:
+
+- A single hero video.
+- Always-visible content like a Twitch player or a Spotify playlist.
+
+<Tip>
+Embed mode loads every iframe on page load — heavy on bandwidth. If you have more than 2–3 embeds, prefer button mode.
+</Tip>
+
+## Grid columns
+
+`youtubeGridColumnsPerRow` accepts `1`–`4` (or omit for auto-fit).
+
+## Limits
+
+- **12 entries** per widget (`entries.max(12)`).
+- **16 widgets** per profile.
+- URLs capped at 2,048 chars; labels at 80; descriptions at 400.
+- Iframe sandbox: `allow-scripts allow-same-origin allow-popups allow-presentation`.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My YouTube video isn't loading">
+    Check the URL is the standard `youtube.com/watch?v=` or `youtu.be/` form. Live streams sometimes need to be **public** (not unlisted) for embedding.
+  </Accordion>
+  <Accordion title="The iframe shows 'refused to connect'">
+    Some sites block being embedded (X-Frame-Options / CSP). There's nothing we can do — the site's owner has to allow embedding. Use a **link button** kind instead.
+  </Accordion>
+  <Accordion title="Can I embed a SoundCloud / Spotify playlist?">
+    Yes — paste their `https://open.spotify.com/embed/...` or `https://w.soundcloud.com/player?...` URL into an `iframe` entry.
+  </Accordion>
+  <Accordion title="Why doesn't my Telegram entry render inline?">
+    Telegram doesn't allow `t.me` URLs to be iframed. The `telegram` kind always renders as a CTA link tile that opens Telegram in a new tab.
+  </Accordion>
+  <Accordion title="My Discord invite doesn't show online members">
+    Make sure the invite is **permanent** (set to never expire in Discord) and the **Server Widget** is enabled in the server's settings → Widget.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,76 @@
+---
+title: "Infobox (markdown) widget"
+description: "A formatted text block. Bold / italic / underline / strike, headings, links, alignment wrappers, optional per-widget font (Premium)."
+keywords: ["markdown", "text block", "infobox", "info box", "info widget", "long bio", "headings", "rich text", "format text", "font per widget", "custom font", "text alignment", "left", "center", "right", "underline", "strike", "emoji"]
+---
+
+<Note>
+Add from: <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">Widgets → Add widget → Infobox</a>
+</Note>
+
+A formatted text block — way more powerful than the **About me** field. Use it for an in-depth "about this profile", an FAQ, a credits list, or anything else that's mostly text.
+
+## Markdown supported
+
+Biolovers uses a **tiny custom markdown** renderer (`renderProfileMiniMarkdown`). Both the dashboard preview and the public profile use the same renderer, so what you see is what visitors get. The full grammar:
+
+| Syntax | Result |
+|--------|--------|
+| `# Title` | Heading 1 |
+| `## Subtitle` | Heading 2 |
+| `### Smaller` | Heading 3 |
+| `#### Smallest` | Heading 4 |
+| `**bold**` | **bold** |
+| `*italic*` | *italic* |
+| `__underline__` | underline |
+| `~~strike~~` | ~~strike~~ |
+| `[label](https://…)` | Tappable link |
+| `<emoji> NAME </emoji>` | Inline custom emoji (uses the configured emoji set) |
+| `<left>…</left>` | Single-line left-aligned wrap |
+| `<center>…</center>` | Single-line centered wrap |
+| `<right>…</right>` | Single-line right-aligned wrap |
+
+A plain newline (`\n`) is a line break.
+
+**Not supported** (these render as plain text): bullet lists (`- item`), numbered lists (`1.`), code blocks / inline code, horizontal rules (`---`), block quotes (`>`), tables, raw HTML or `<iframe>`, markdown images. For embeds use the [Embed widget](/widgets/embed).
+
+The renderer never touches `dangerouslySetInnerHTML`, so untrusted text is safe.
+
+## Character cap
+
+`12,000` characters per infobox. Past that, the schema rejects the save.
+
+## Options
+
+| Option | What it does |
+|--------|--------------|
+| **Text alignment** | `left` / `center` / `right`. When set, the prose block shrinks to fit and anchors to that side. Omitted = full-width left. |
+| **Custom font URL** *(Premium)* | Upload a font file (WOFF2 / OTF / TTF, max 2 MiB). Applies **only to this infobox** — does not change your profile-wide fonts. |
+| **Body chrome** | `solid` / `transparent` / `glass` / `blur`. There is no "clean" chrome on Biolovers. |
+| **Custom blur** *(Premium)* | Override the chrome's default backdrop blur (0–50 px). Stripped server-side for free accounts. |
+
+## Tips
+
+- A **center-aligned, transparent** infobox makes for a nice quote / credits block.
+- Use a **section heading** (e.g. `## Currently working on`) at the top so the widget feels intentional.
+- Per-widget custom fonts are the right place for a special display font (script, brutalist, retro) without changing your bio font.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I embed an image inside the infobox?">
+    No — markdown image syntax `![alt](url)` is not in the supported subset. For images, use the [Portfolio widget](/widgets/portfolio).
+  </Accordion>
+  <Accordion title="My bullet list is showing as plain text">
+    Lists aren't supported. Use newlines + a leading symbol (e.g. `• item`) typed manually if you want a bullet look.
+  </Accordion>
+  <Accordion title="My custom font isn't loading">
+    See [Custom font not loading](/troubleshooting/custom-font-not-loading).
+  </Accordion>
+  <Accordion title="What's the character limit?">
+    12,000 characters per infobox.
+  </Accordion>
+  <Accordion title="My text alignment looks odd">
+    With **center / right alignment** the box shrinks to fit its widest line. Add a longer line if you want a wider box.
+  </Accordion>
+</AccordionGroup>

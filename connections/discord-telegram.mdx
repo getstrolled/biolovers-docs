@@ -1,0 +1,86 @@
+---
+title: "Discord & Telegram"
+description: "Link your Discord account, show your Discord presence, add a server invite, and link a Telegram channel."
+keywords: ["discord", "discord status", "presence", "discord presence", "rich presence", "now playing", "spotify status", "what game am i playing", "server", "discord server", "guild widget", "server invite", "join my server", "telegram", "channel", "telegram channel", "telegram link", "link discord", "connect discord", "discord account", "discord bot"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/connect/discord" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/connect/discord</a>
+</Note>
+
+Two cards on the same panel — link your Discord account and configure a Telegram link. The Discord server invite is a separate input on the same panel.
+
+<Frame caption="Discord & Telegram panel.">
+  <img src="/images/dashboard/connect-discord.png" alt="Discord and Telegram panel" />
+</Frame>
+
+## Link Discord
+
+Tap **Connect Discord**. You'll be sent to Discord's OAuth screen — we ask for **only one scope**: `identify`. That gives us your Discord ID, username, avatar, and global name.
+
+Once linked we use the Discord ID to:
+
+- Drive the **Discord presence card** on your profile (what you're playing / listening to / your status). The actual presence comes from the Biolovers Discord **bot** — it can only see your status when you **share at least one server with the bot** (the Biolovers Discord). The dashboard surfaces a "Join our Discord to show live status" banner explaining this.
+- Grant / revoke the **Premium**, **Verified**, and **Donator** Discord roles after a purchase.
+
+To unlink, tap **Disconnect** next to your Discord chip on the panel. We also expose a **Refresh from Discord** button that re-pulls your latest avatar, Nitro flags, and badges.
+
+### Public profile toggles
+
+Once linked, the **On your public profile** group surfaces a stack of checkboxes (real labels):
+
+- **Show Discord on my page** — off keeps you linked for sign-in recovery / role grants but hides the Discord card from visitors.
+- **Show server tag** — Discord's server-rep tag next to your name.
+- **Show profile badges** — Nitro, HypeSquad, staff, etc.
+- **Show avatar decoration** — the Nitro-Shop frame around your avatar on the Discord card.
+- **Show nameplate** — the Nitro-Shop gradient artwork behind the Discord card.
+- **Use it on my main avatar too** — also wrap the avatar decoration around your main profile avatar.
+
+### Server invite
+
+The **Server invite link** input takes a `https://discord.gg/…` URL or a bare invite code. Once a valid invite is set, we render the join card with the server icon, name, and online member count.
+
+When you've linked Discord and set an invite, an extra dropdown appears:
+
+- **Server invite placement** — `Inside the Discord card` or `Below the Discord card`.
+
+### Show as small tile
+
+The **Show Discord as a small tile** group has two checkboxes:
+
+- **Show my Discord as a small tile** — moves the Discord presence to the live-tile grid instead of the big panel.
+- **Show my Discord server as a small tile** — same idea for the server invite card.
+
+## Telegram
+
+Below Discord, the Telegram block has:
+
+- **Channel or group (`t.me/…` or `@username`)** — the URL or handle.
+- **Show Telegram widget on my public page** — checkbox.
+- **Show channel photo next to the Telegram block** — checkbox.
+
+There's no live presence for Telegram — Telegram doesn't expose presence the way Discord does. The Telegram block renders as a join button with the channel photo (when enabled) and the channel name fetched from the public Telegram page.
+
+## How presence is fetched
+
+The Biolovers Discord bot connects to Discord's gateway and listens for presence updates from members of every server it shares with you. There is no Lanyard relay — the bot itself emits the presence to your profile. If you don't share a server with the bot, the card shows a **Join our Discord** call-to-action instead of your status.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My presence card says 'offline' but I'm online">
+    See the dedicated page: [Discord presence offline](/troubleshooting/discord-presence-offline). Short answer: you need to share a server with the Biolovers Discord bot. Discord-status `Invisible` also reads as offline by design.
+  </Accordion>
+  <Accordion title="The server's online count is wrong">
+    The number comes from the public guild widget which Discord refreshes lazily. Re-saving the invite forces a re-fetch.
+  </Accordion>
+  <Accordion title="My Discord nickname has weird characters">
+    We use whatever Discord returns, including emoji. To override the displayed name on your profile, use the [Display name](/profile/name-and-about) field — it doesn't change anything in Discord itself.
+  </Accordion>
+  <Accordion title="I changed Discord servers, the old one still shows">
+    Edit the **Server invite link** field on the panel. Saves automatically a few seconds after you stop typing.
+  </Accordion>
+  <Accordion title="What scope do you actually request?">
+    Only `identify`. We do not request `email`, `guilds`, `guilds.members.read`, `guilds.join`, or any bot scopes during the user OAuth flow.
+  </Accordion>
+</AccordionGroup>

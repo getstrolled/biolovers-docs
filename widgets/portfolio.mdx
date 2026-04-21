@@ -1,0 +1,80 @@
+---
+title: "Portfolio widget"
+description: "Image grid + a row of embedded clips (YouTube / Twitch / Streamable / Kick). Up to 60 images and 12 clips per widget."
+keywords: ["portfolio", "gallery", "showcase", "images", "videos", "clips", "youtube", "twitch", "streamable", "kick", "image grid", "show my work", "showreel"]
+---
+
+<Note>
+Add from: <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">Widgets → Add widget → Portfolio</a>
+</Note>
+
+A scrollable gallery of your work — an **image grid** plus a **row of embedded clips** in one widget.
+
+## What goes in the widget
+
+The portfolio schema has two arrays:
+
+| Array | Holds | Cap |
+|-------|-------|-----|
+| `images` | Each entry is `{ imageUrl, caption? }`. The image URL must be `https://` or a `/uploads/...` path uploaded from this widget. | **60** images. |
+| `clips` | Each entry is `{ url }` only. Allowed sources: **YouTube**, **Twitch** (video or clip), **Streamable**, **Kick** video. | **12** clips. |
+
+You need **at least one image or one clip** per portfolio widget — the schema rejects empty saves.
+
+For embedded clips we use the platform's official iframe — no scraping, no proxying. Self-hosted video uploads are not part of the portfolio widget.
+
+## Per-item fields
+
+### Image entry
+
+| Field | What it does |
+|-------|--------------|
+| **Image URL / upload** | The image (uploaded via the widget editor or pasted as a URL — only `https://` or `/uploads/...` accepted). |
+| **Caption** *(optional)* | Up to 200 chars. Shown under the thumbnail when **item labels** are on. |
+
+There's no per-image "description", "tags", or alt-text override beyond the caption.
+
+### Clip entry
+
+| Field | What it does |
+|-------|--------------|
+| **URL** | Public YouTube, Twitch (video or clip), Streamable, or Kick URL. Up to 2,048 chars. |
+
+Clips don't have captions on the schema — the title shown in the embed is whatever the destination platform returns.
+
+## Widget options
+
+| Option | What it does |
+|--------|--------------|
+| **Image grid columns** (`portfolioGridColumnsPerRow`) | 2–6. Omitted = 3. |
+| **Spread partial rows** | When on, partial bottom rows use auto-fit to span full width. Off = fixed columns with empty space on the right. |
+| **Item labels** | Toggles the caption under each image (defaults on). |
+| **Item chrome** | `solid` / `transparent` / `glass` / `blur` (the same `widgetItemChrome` enum every widget uses). |
+
+There is no **masonry / variable-height** layout option — the grid is uniform tiles.
+
+## Tips
+
+- **First** image is the visual anchor — pick something that grabs attention.
+- Mix-and-match: a portfolio widget with 8 images and 1 hero clip reads cleanly.
+- For lots of video, use the [Embed widget](/widgets/embed) — it has dedicated grid columns + button/embed display modes.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I upload videos directly?">
+    Not via the portfolio widget — the `clips` array only accepts YouTube / Twitch / Streamable / Kick URLs. For an `<video>`-style background, see [Page background](/media/page-background).
+  </Accordion>
+  <Accordion title="Twitch clip says 'not allowed'">
+    The Twitch player needs the page hostname to allowlist. We send the right `parent=` parameter — if you see this on a custom domain, drop us a message.
+  </Accordion>
+  <Accordion title="Can I have one widget for images and another for clips?">
+    Yes. Add two portfolio widgets — one with `images` only, one with `clips` only.
+  </Accordion>
+  <Accordion title="The grid looks weird on mobile">
+    Drop the column count. 2 columns is usually right for phones; 4 is comfortable on desktop.
+  </Accordion>
+  <Accordion title="My image rejected with 'Image must be http(s) or a /uploads/ path'">
+    Drag-and-drop the file from disk so it goes through the widget uploader, or paste a fully-qualified `https://` URL. Local file paths (`file://`, `C:\...`) are not accepted.
+  </Accordion>
+</AccordionGroup>

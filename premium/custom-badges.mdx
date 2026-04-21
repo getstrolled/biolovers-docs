@@ -1,0 +1,68 @@
+---
+title: "Buying custom badges"
+description: "Buy custom-badge slots, then upload your own designs. $4.99 per slot with a +5%-per-extra volume discount, capped at 20%. Or buy six for the price of five."
+keywords: ["buy badge", "buy custom badge", "badge slot", "5 for 6", "five for six", "discount", "volume discount", "bundle", "checkout", "custom design", "personal badge", "stripe", "crypto"]
+---
+
+<Note>
+Buy: <a href="https://biolovers.site/custom-badges" target="_blank" rel="noopener">biolovers.site/custom-badges</a>
+</Note>
+
+This is the **purchase** side. For the design side (uploading the image, name, hover text), see [Custom badges](/badges/custom-badges).
+
+<Frame caption="Custom badges checkout page.">
+  <img src="/images/money/custom-badges-checkout.png" alt="Custom badges checkout page" />
+</Frame>
+
+## Pricing
+
+The **unit price** is `CUSTOM_BADGE_UNIT_USD = $4.99` per slot. There's a **volume discount** that grows with quantity:
+
+| Quantity | Discount | Total | Per slot |
+|----------|----------|-------|----------|
+| 1 | 0% | $4.99 | $4.99 |
+| 2 | 5% | $9.48 | $4.74 |
+| 3 | 10% | $13.47 | $4.49 |
+| 4 | 15% | $16.97 | $4.24 |
+| 5 | 20% | $19.96 | $3.99 |
+| ≥ 5 | 20% (capped) | `5 × $4.99 × 0.80 …` | $3.99 |
+
+The discount is `+5% per extra slot after the first, capped at 20%` (`customBadgeVolumeDiscountPercent`).
+
+## Bundles
+
+Two ways to buy:
+
+| Bundle | What you pay | What you get |
+|--------|--------------|--------------|
+| **Standard** | Quantity × unit, with the volume discount | The same number of slots you bought. |
+| **5-for-6** | The discounted price for 5 ($19.96) | **6 slots.** A free extra slot on top of the 20% volume discount. |
+
+The **5-for-6** bundle is the best per-slot price.
+
+## How to buy
+
+1. Pick the **bundle** (and quantity if standard).
+2. Tap **Purchase**.
+3. Pick **Card** or **Crypto** in the modal.
+4. Accept Terms + Refund policy.
+5. Pay.
+
+Slots appear on your account the moment payment confirms — go to the [Badges panel](/badges/custom-badges) to upload designs.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Is the 5-for-6 bundle the best price?">
+    Yes — you pay for 5 (with the 20% volume discount baked in) and get 6 slots, putting the per-slot cost at ~$3.33.
+  </Accordion>
+  <Accordion title="Can I buy 2 bundles at once?">
+    Buy them one after the other — slots stack on your account. There's no limit on total slots.
+  </Accordion>
+  <Accordion title="What if I delete a custom badge later?">
+    Slots are returned to your pool. You can upload a new design without buying again.
+  </Accordion>
+  <Accordion title="Can I refund unused slots?">
+    Yes — unused slots are refundable, *case-by-case*, while still unused. Once a slot has been spent on a badge (or one is being created), that slot is considered delivered. See [Refunds](/premium/refunds).
+  </Accordion>
+</AccordionGroup>

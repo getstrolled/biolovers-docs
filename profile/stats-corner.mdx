@@ -1,0 +1,81 @@
+---
+title: "Stats (the small line on your card)"
+description: "The little stats line shows things like profile views, joined date, location, and timezone. Pick which appear, in what positions, and how the hover tooltip looks."
+keywords: ["stats", "corner", "meta", "meta line", "meta line order", "uid", "profile uid", "join date", "joined", "joined date", "views shown", "location", "timezone", "country flag", "hover tooltip", "tooltip style", "tooltip transparent", "transparent tooltip", "stat position", "stat order", "rearrange stats", "registration number"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/profile/corner" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/profile/corner</a>
+</Note>
+
+This is the **small icon row** that sits on / under your profile card. Stats like profile views, joined, location, and timezone live here.
+
+<Frame caption="The Stats panel.">
+  <img src="/images/dashboard/profile-corner.png" alt="Stats / corner line editor" />
+</Frame>
+
+## What stats are available
+
+| Stat | What it shows | Notes |
+|------|---------------|-------|
+| **Profile views** | All-time view count. | Same number as the Overview tile. **Premium** to hide it. |
+| **Joined** | A relative age like "3 weeks ago" / "1 year ago". | Display is approximate; we don't expose the exact date / time to visitors. |
+| **Location** | Country / region you typed below. | Free text. |
+| **Timezone** | Free-text timezone label (e.g. `Europe/Berlin`, `EST`, `GMT+2`). | Static text — does not show a live clock. |
+| **User id (UID)** | Your numeric account ID, also called **Registration #**. | Always shown in the @handle tooltip; **Premium** controls whether it appears as a dedicated meta pill. |
+
+Each stat has a checkbox to **show / hide** it. The Profile views and User id checkboxes are **locked on** for free accounts (Premium can hide them).
+
+## Positions
+
+Each stat goes into one of four position slots picked from a dropdown — see `META_SLOT_OPTS` in the code. Unlike a drag list, this is a **set of dropdowns**: pick which slot each stat lives in, and the row is built in slot order.
+
+If two stats share a slot, the later one wins (so make them unique).
+
+### Same stats, different placements
+
+<Frame caption="Default — site default placement.">
+  <img src="/images/comparisons/stats-corner/default.png" alt="Default stats placement" />
+</Frame>
+<Frame caption="All stats forced into the card top-left corner.">
+  <img src="/images/comparisons/stats-corner/all-top-left.png" alt="All stats top-left" />
+</Frame>
+<Frame caption="All stats forced into the card bottom-right corner.">
+  <img src="/images/comparisons/stats-corner/all-bottom-right.png" alt="All stats bottom-right" />
+</Frame>
+
+## Hover tooltip style
+
+Hover any stat icon and a small tooltip appears. Two looks:
+
+- **Styled** — opaque background with the card's tint.
+- **Transparent** — see-through with a soft blur.
+
+## Meta line color *(Premium)*
+
+A separate color picker lets Premium accounts override the meta-line color independently of the rest of the card.
+
+## Tips
+
+- The stats row gets crowded fast. Three pills usually look best.
+- If you turn off **all** the optional stats and Premium-hide the locked ones, the row disappears entirely.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My UID looks weird, is something wrong?">
+    UIDs are just sequential numbers — early accounts have small numbers, newer ones bigger. Nothing personal in there.
+  </Accordion>
+  <Accordion title="Why doesn't 'joined' show the exact date?">
+    By design — visitors only see a relative age ("3 weeks ago"). The full date isn't exposed.
+  </Accordion>
+  <Accordion title="Can I show a country flag instead of text?">
+    Yes — type the country emoji into the **Location** field. They render as a flag on most devices.
+  </Accordion>
+  <Accordion title="My timezone doesn't show a live clock">
+    The timezone field is a free-text label, not a live clock. If you want "current time", put it in your bio or a markdown widget — the meta pill just shows the label you typed.
+  </Accordion>
+  <Accordion title="Can I drag the stats to reorder them?">
+    Not as a drag list. Pick a position slot per stat from its dropdown — the row renders in slot order.
+  </Accordion>
+</AccordionGroup>

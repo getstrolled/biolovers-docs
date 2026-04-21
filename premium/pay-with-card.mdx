@@ -1,0 +1,59 @@
+---
+title: "Pay with card (Stripe)"
+description: "Buy Premium / Verified / Donate / Custom-badge slots with a credit card or Apple Pay. Secure checkout via Stripe."
+keywords: ["card payment", "credit card", "debit card", "stripe", "apple pay", "visa", "mastercard", "buy premium with card", "stripe checkout", "card receipt", "purchase", "secure payment"]
+---
+
+Card payments use **Stripe Checkout** — the same secure hosted page powering most online stores. We never see your card number.
+
+## What you can buy
+
+- **Premium** ($6.99 lifetime) — see [What Premium unlocks](/premium/what-premium-unlocks)
+- **Verified** ($19.99 lifetime) — see [Verified](/premium/verified)
+- **Donations** ($1.99 – $1,000) — see [Donations](/premium/donations)
+- **Custom badge slots** — $4.99 per slot, with a volume discount — see [Custom badges](/badges/custom-badges)
+
+## How to pay
+
+1. Go to the checkout page for what you want (e.g. <a href="https://biolovers.site/premium" target="_blank" rel="noopener">/premium</a>).
+2. Tap **Purchase**.
+3. In the popup, pick **Card / Apple Pay** and accept the **Terms** + **Refund policy** boxes.
+4. Tap **Purchase — $X.XX**.
+5. A new tab opens with **Stripe Checkout** — type your card or use Apple Pay.
+6. Once Stripe confirms, you land on our success page. Your account is upgraded **immediately** (or within seconds).
+
+If the popup is blocked, the page shows a **Reopen Stripe** link to recover.
+
+<Note>
+**Google Pay** is not enabled on our Stripe Checkout configuration. The supported wallets are **Apple Pay** + standard card fields.
+</Note>
+
+## Receipts
+
+You get a **branded Biolovers receipt email** once payment confirms (sent via our own mail pipeline). Stripe also sends its standard receipt with VAT info to the same address.
+
+Both go to the **email on file**. You **must have a verified email** to checkout — the API rejects the request otherwise. See [Email](/account/email).
+
+## Disputes / refunds
+
+See [Refunds](/premium/refunds). Short version: fees are **final and non-refundable** by default, with narrow exceptions for billing errors / non-delivery / unused purchases obviously made in error.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Does my card information go to Biolovers?">
+    No. Stripe handles every part of the card flow on their own page. We get a payment confirmation, never the card number.
+  </Accordion>
+  <Accordion title="My country isn't supported by Stripe">
+    Use [Pay with crypto](/premium/pay-with-crypto) — NOWPayments works almost everywhere.
+  </Accordion>
+  <Accordion title="The Stripe page won't load">
+    Pop-up blockers, ad-blockers, or strict tracking-prevention can block Stripe's hosted page. Either allow `*.stripe.com` once, or tap **Reopen Stripe** in the modal.
+  </Accordion>
+  <Accordion title="Can I pay with Google Pay?">
+    Not currently — our Stripe Checkout is configured for cards + Apple Pay. Use a card directly if you don't have an Apple device.
+  </Accordion>
+  <Accordion title="My payment went through but Premium isn't on my account">
+    Wait ~30 seconds — the success page polls until our system confirms the upgrade. If it still doesn't apply, refresh the dashboard. If still missing after 5 minutes, send the Stripe receipt to <a href="mailto:support@biolovers.site">support@biolovers.site</a>.
+  </Accordion>
+</AccordionGroup>

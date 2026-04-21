@@ -1,0 +1,54 @@
+---
+title: "Log in"
+description: "Sign in to your Biolovers dashboard with your username and password. Two-step sign-in adds a 6-digit authenticator code on top."
+keywords: ["log in", "login", "sign in", "signin", "access", "enter password", "where do i log in", "authenticator code"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/login" target="_blank" rel="noopener">dashboard.biolovers.site/login</a>
+</Note>
+
+<Frame caption="Login form on the dashboard.">
+  <img src="/images/auth/login.png" alt="Login form" />
+</Frame>
+
+## What you fill in
+
+| Field | What it does |
+|-------|--------------|
+| **Username** | The username you signed up with. Not case-sensitive. |
+| **Password** | Whatever you set at signup or last changed it to. |
+| **Authenticator code** *(only shown if you have 2FA on)* | The current 6-digit code from your authenticator app. |
+
+Tap **Sign in**. You land on the dashboard's edit page (`/edit`).
+
+## I forgot my password
+
+Two paths back in:
+
+1. **Email reset** — works if you added and verified an email. See [Forgot password](/getting-started/forgot-password). We email you a one-time link that expires in 30 minutes.
+2. **Contact support** — if you never added an email, see [No email and forgot password](/troubleshooting/no-email-no-password). You'll need to prove the account is yours.
+
+There is **no recovery phrase / 12-word backup** on Biolovers. The only self-serve reset is email.
+
+## I lost my 2FA device
+
+See [I lost my 2FA](/troubleshooting/lost-2fa).
+
+## Why am I getting "too many requests"?
+
+To stop bots from guessing passwords, the dashboard rate-limits sign-in attempts per IP address (24 requests per minute on `/api/auth/*`). If you triggered it, wait about a minute and try again. The same limit applies to forgot-password and 2FA submissions.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why does it open dashboard.biolovers.site instead of biolovers.site?">
+    Editing happens on a separate **dashboard** subdomain. The main site (`biolovers.site`) is for visitors and the marketing pages. The "Login" link in the top-right of the main site sends you to the dashboard automatically.
+  </Accordion>
+  <Accordion title="Can I stay logged in?">
+    Yes. The session cookie lasts about 90 days by default. If you tap **Log out** in the dashboard sidebar or clear your cookies, you'll have to sign in again.
+  </Accordion>
+  <Accordion title="My password is right but it says wrong?">
+    Watch out for accidental spaces, Caps Lock, and your phone autocorrect adding a period. If it really is wrong, use [Forgot password](/getting-started/forgot-password).
+  </Accordion>
+</AccordionGroup>

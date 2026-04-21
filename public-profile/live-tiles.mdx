@@ -1,0 +1,39 @@
+---
+title: "Live tiles (visitor view)"
+description: "What live tiles look like to visitors — Spotify, YouTube, Twitch, Steam, GitHub, and more."
+keywords: ["live tile", "social card", "platform card", "spotify card", "youtube card", "twitch card", "github card", "steam card", "currently watching", "latest video", "what im playing"]
+---
+
+Live tiles are the **bigger cards** below your social link chips that pull live data from a platform. Each tile has a tappable **call-to-action button** (View Profile / Listen / Watch / Join).
+
+## Common parts
+
+| Part | What it shows |
+|------|---------------|
+| **Icon** | Platform logo. |
+| **Username / handle** | Your handle on that platform. |
+| **Live data** | Per-platform stats — followers, latest video, level, current rank, server status, weather, etc. (See [Live tiles editor](/connections/social-integrations) for the per-platform field list.) |
+| **CTA button** | Opens your profile / playlist / video on that platform. |
+
+## How they refresh
+
+Tiles refresh on a **per-platform schedule** (server-side cache TTL):
+
+- **GitHub**, **Roblox** — 6 hours.
+- **YouTube**, **Spotify**, **Steam**, **X / Twitter**, **Instagram**, **TikTok** — 1 hour.
+- **Valorant**, **Rainbow Six** — 30 minutes.
+- **Twitch** — 15 minutes.
+- **Minecraft server**, **Weather** — 5 minutes.
+- **Discord** and **Discord server invite** — pseudo-platforms; not cached server-side. Discord presence is pushed live by the bot; the invite tile fetches client-side.
+
+Free **and** Premium accounts share the same per-platform TTL. On top of that, every tile is **revisited by a background cron every ~6 hours** so stale tiles eventually refresh even if no visitor opens the page.
+
+A visitor opening your page **after** the cache expired triggers a background refresh — they see the cached data instantly; the next visitor sees fresh.
+
+## Sections
+
+Tiles can be split into **scroll-page sections** (`section: 1`–`10` per tile). Sections can have an optional title.
+
+## Setup
+
+[Live tiles editor](/connections/social-integrations).

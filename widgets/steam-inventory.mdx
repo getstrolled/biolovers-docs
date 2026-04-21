@@ -1,0 +1,58 @@
+---
+title: "Steam inventory widget"
+description: "Show your CS2 / Dota 2 / TF2 inventory from Steam Community."
+keywords: ["steam", "steam inventory", "cs2", "csgo", "dota", "tf2", "team fortress", "skins", "items", "cosmetics", "steam profile", "steam id", "vanity url", "private inventory", "show inventory", "show skins", "loadout", "case opening"]
+---
+
+<Note>
+Add from: <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">Widgets → Add widget → Steam inventory</a>
+</Note>
+
+Show your Steam inventory on your profile. Supports **CS2** (Counter-Strike 2), **Dota 2**, and optionally **Team Fortress 2** — pulled directly from Steam Community.
+
+## Setup
+
+1. **Make sure your Steam inventory is public.** Steam Profile → Edit → Privacy → set both **Profile** and **Inventory** to *Public*. Without this we get an error from Steam.
+2. Tap **Add widget → Steam inventory**.
+3. Paste your **Steam profile URL** — either format works:
+   - `https://steamcommunity.com/id/yourvanityname`
+   - `https://steamcommunity.com/profiles/76561198xxxxxxxxx`
+4. Pick which games to show:
+   - **CS2** *(default)*
+   - **Dota 2** *(default)*
+   - **TF2** *(opt-in — toggle on)*
+5. Move on. The widgets editor **autosaves** every change after a short pause — there is no save button.
+
+The widget renders a button on your card that opens a modal with **one column per enabled game**. So if you only enable CS2, the modal has one column.
+
+## Optional: per-game allowlists
+
+If you only want to show specific items (rare drops, your favorites), set an allowlist for that game in the editor. Items not on the list are hidden publicly. Leave blank to show your whole inventory for that game.
+
+## How fresh is the data?
+
+We cache your inventory **server-side**. Refresh windows:
+
+- **Default refresh:** every ~12h, automatically.
+- **Edit + autosave:** triggers an immediate refresh on the next render.
+- **Visitor opens your page after expiry:** kicks a background refresh — the next visitor will see the updated data.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="The widget says my inventory is private">
+    Steam → Profile → Edit profile → Privacy → set **Inventory** to **Public**. Restart Steam if it doesn't take effect immediately.
+  </Accordion>
+  <Accordion title="My new skins aren't showing">
+    Cache window is 12h. To force a refresh, edit any field on the widget so it autosaves — the next render resets the next-sync timer.
+  </Accordion>
+  <Accordion title="Is this safe? Do I need to log in to Steam through you?">
+    No. We **only** read public inventory JSON via Steam's public endpoints. No OAuth, no password, no session. We can't change anything in your account.
+  </Accordion>
+  <Accordion title="Can I show inventory from other games (Rust, PUBG, etc.)?">
+    Not yet. CS2, Dota 2, and TF2 are the supported AppIDs. Other games can be requested in the [Discord](https://biolovers.site/discord).
+  </Accordion>
+  <Accordion title="What if my inventory is huge?">
+    We cap the request at 2,500 items per game. Bigger inventories will show the most recent items first.
+  </Accordion>
+</AccordionGroup>

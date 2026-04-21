@@ -1,0 +1,187 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Biolovers Help",
+  "description": "How to set up and customize your Biolovers profile — from picking your URL all the way to widgets, audio, and Premium.",
+  "colors": {
+    "primary": "#a855f7",
+    "light": "#c4b5fd",
+    "dark": "#7c3aed"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "/"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Main site",
+        "href": "https://biolovers.site"
+      },
+      {
+        "label": "Discord",
+        "href": "https://biolovers.site/discord"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open dashboard",
+      "href": "https://dashboard.biolovers.site"
+    }
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://biolovers.site/discord"
+    },
+    "links": [
+      {
+        "header": "Product",
+        "items": [
+          { "label": "Make your page", "href": "https://dashboard.biolovers.site" },
+          { "label": "Pricing", "href": "https://biolovers.site/pricing" },
+          { "label": "FAQ", "href": "https://biolovers.site/faq" }
+        ]
+      },
+      {
+        "header": "Legal",
+        "items": [
+          { "label": "Terms", "href": "https://biolovers.site/terms" },
+          { "label": "Privacy", "href": "https://biolovers.site/privacy" },
+          { "label": "Refund policy", "href": "https://biolovers.site/refund" }
+        ]
+      }
+    ]
+  },
+  "search": {
+    "prompt": "Search the help center..."
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "pages": [
+          "index",
+          "getting-started/welcome",
+          "getting-started/sign-up",
+          "getting-started/log-in",
+          "getting-started/forgot-password",
+          "getting-started/two-factor",
+          "getting-started/glossary"
+        ]
+      },
+      {
+        "group": "Overview tab",
+        "pages": [
+          "overview/your-stats"
+        ]
+      },
+      {
+        "group": "Profile",
+        "pages": [
+          "profile/domain-and-url",
+          "profile/name-and-about",
+          "profile/stats-corner"
+        ]
+      },
+      {
+        "group": "Appearance",
+        "pages": [
+          "appearance/card-layout",
+          "appearance/fonts",
+          "appearance/text-effects",
+          "appearance/browser-tab"
+        ]
+      },
+      {
+        "group": "Media",
+        "pages": [
+          "media/avatar",
+          "media/custom-cursor",
+          "media/page-background",
+          "media/splash",
+          "media/background-music"
+        ]
+      },
+      {
+        "group": "Connections",
+        "pages": [
+          "connections/discord-telegram",
+          "connections/social-integrations",
+          "connections/social-links",
+          "connections/wallets"
+        ]
+      },
+      {
+        "group": "Widgets & scrolling",
+        "pages": [
+          "widgets/overview",
+          "widgets/markdown-infobox",
+          "widgets/embed",
+          "widgets/gear-shelf",
+          "widgets/portfolio",
+          "widgets/steam-inventory"
+        ]
+      },
+      {
+        "group": "Badges",
+        "pages": [
+          "badges/earned-badges",
+          "badges/custom-badges"
+        ]
+      },
+      {
+        "group": "Account & security",
+        "pages": [
+          "account/email",
+          "account/password",
+          "account/two-factor"
+        ]
+      },
+      {
+        "group": "Premium & money",
+        "pages": [
+          "premium/what-premium-unlocks",
+          "premium/pay-with-card",
+          "premium/pay-with-crypto",
+          "premium/verified",
+          "premium/donations",
+          "premium/custom-badges",
+          "premium/refunds"
+        ]
+      },
+      {
+        "group": "Public profile (what visitors see)",
+        "pages": [
+          "public-profile/anatomy",
+          "public-profile/scroll-pages",
+          "public-profile/discord-presence",
+          "public-profile/live-tiles",
+          "public-profile/audio-player",
+          "public-profile/splash-screen",
+          "public-profile/mobile"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/wont-save",
+          "troubleshooting/audio-autoplay",
+          "troubleshooting/discord-presence-offline",
+          "troubleshooting/custom-font-not-loading",
+          "troubleshooting/lost-2fa",
+          "troubleshooting/no-email-no-password"
+        ]
+      }
+    ]
+  },
+  "fonts": {
+    "heading": {
+      "family": "Plus Jakarta Sans"
+    },
+    "body": {
+      "family": "Plus Jakarta Sans"
+    }
+  }
+}

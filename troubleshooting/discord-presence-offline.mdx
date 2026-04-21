@@ -1,0 +1,30 @@
+---
+title: "Discord presence shows offline"
+description: "If your Discord live tile says 'Offline' even though you're online, you're not in the Biolovers Discord server."
+keywords: ["discord offline", "presence offline", "discord status not updating", "discord card stuck", "lanyard", "biolovers server", "join discord", "discord widget broken", "discord not showing"]
+---
+
+If your Discord live tile says **Offline** even though Discord shows you online, the most common cause is that **you're not in the Biolovers Discord server**.
+
+## Why being in our server matters
+
+Discord's API only exposes presence data to bots that **share a server with you**. The Biolovers presence bot listens for the `guildMemberUpdate` / presence gateway events from every server it's in — easiest of which to join is the Biolovers community Discord. If you don't share *any* server with the bot, it literally can't see your status — Discord refuses to tell it. (There's no Lanyard relay in the loop — the bot pushes presence to your profile directly.)
+
+## Fix it
+
+1. Join the Biolovers Discord: <a href="https://biolovers.site/discord" target="_blank" rel="noopener">biolovers.site/discord</a>.
+2. Wait ~1 minute.
+3. Reload your profile page in another tab — your live tile should flip to your real status.
+
+You don't have to chat or do anything in the server — just be a member.
+
+## Other things to check
+
+- **Linked the right Discord account?** Open the [Discord & Telegram panel](/connections/discord-telegram) and confirm the username shown matches your actual Discord.
+- **"Show presence" toggle on?** Same panel.
+- **Discord set to Invisible?** Invisible mode shows as Offline to everyone, including our bot. Set yourself to Online / Idle / DND.
+- **Custom status** with no game/Spotify? That's normal — it'll show your custom status text and the green dot.
+
+## Can I see presence without joining?
+
+Not for live data. The card will show your last cached status (if any), but won't update.

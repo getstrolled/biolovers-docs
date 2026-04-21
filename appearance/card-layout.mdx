@@ -1,0 +1,154 @@
+---
+title: "Card layout"
+description: "The shape of your profile card — structure preset, hero alignment, card width, page chrome, and the card panel fill (solid / glass / transparent)."
+keywords: ["layout", "preset", "card", "card width", "card scale", "padding", "chrome", "frame", "border", "glass", "default", "modern", "simplistic", "sleek", "solid", "transparent", "clean", "make page wider", "make card smaller", "remove background", "blur card", "card panel", "structure"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/look/card-layout" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/look/card-layout</a>
+</Note>
+
+This panel sets the **overall shape** of your profile card — the structure preset, where the avatar / name sit, how wide the card is, and the card's fill style.
+
+<Frame caption="Card layout panel.">
+  <img src="/images/dashboard/look-card-default.png" alt="Card layout panel" />
+</Frame>
+
+<Tip>
+**Free can use almost everything here.** The only Premium-gated controls on this panel are the **Transparent** card panel option and the **custom backdrop blur** slider.
+</Tip>
+
+## Structure layout
+
+Tap one of the four preset cards. Each preset is a complete starting point.
+
+| Preset | Vibe |
+|--------|------|
+| **Default** | Balanced — site default. |
+| **Modern** | Looser, breathy spacing. |
+| **Simplistic** | Minimal, link-focused. |
+| **Sleek** | Tight, premium feel. |
+
+Picking a preset doesn't lock anything — you can override the individual controls below.
+
+### Side-by-side: the four presets on the showcase profile
+
+<Frame caption="Default (showcase profile, no other changes).">
+  <img src="/images/comparisons/card-layout/default.png" alt="Default preset" />
+</Frame>
+<Frame caption="Modern.">
+  <img src="/images/comparisons/card-layout/modern.png" alt="Modern preset" />
+</Frame>
+<Frame caption="Simplistic.">
+  <img src="/images/comparisons/card-layout/simplistic.png" alt="Simplistic preset" />
+</Frame>
+<Frame caption="Sleek.">
+  <img src="/images/comparisons/card-layout/sleek.png" alt="Sleek preset" />
+</Frame>
+
+## Name & avatar (vertical)
+
+Three options for how the hero (avatar + name) sits inside the card:
+
+| Option | What it does |
+|--------|--------------|
+| **Site default** | Tighter top, link-in-bio style. |
+| **Legacy** | Original spacing from the early version of the site. |
+| **More space above** | Centered hero with extra breathing room. |
+
+## Card width
+
+Four discrete sizes — **not** a slider:
+
+| Width | What it does |
+|-------|--------------|
+| **Comfortable** *(site default)* | The standard card width. |
+| **Compact** | Narrower card, tighter line lengths. |
+| **Wide** | More breathing room, looser column. |
+| **Full** | Edge-to-edge — basically no card width limit. |
+
+<Frame caption="Compact.">
+  <img src="/images/comparisons/card-width/compact.png" alt="Compact card width" />
+</Frame>
+<Frame caption="Comfortable (default).">
+  <img src="/images/comparisons/card-width/comfortable.png" alt="Comfortable card width" />
+</Frame>
+<Frame caption="Wide.">
+  <img src="/images/comparisons/card-width/wide.png" alt="Wide card width" />
+</Frame>
+<Frame caption="Full.">
+  <img src="/images/comparisons/card-width/full.png" alt="Full card width" />
+</Frame>
+
+## Profile chrome
+
+Two looks for the page-level chrome around your card:
+
+| Chrome | What it does |
+|--------|--------------|
+| **Default** | Card has its visible frame and chip borders. |
+| **Clean** | No card outline, no chip borders — text and badges sit straight on your background like a minimal overlay. |
+
+## Card panel (the fill behind the card content)
+
+| Option | What it does | Notes |
+|--------|--------------|-------|
+| **Site default** | Glass with a subtle blur — works on any background. | |
+| **Solid** | Fully opaque panel — best for busy or photo backgrounds. | |
+| **Glass** | Frosted, semi-transparent. Same look as the default with no blur fallback. | |
+| **Transparent** | No panel fill — text and avatars float on the page background. | **Premium-only.** |
+
+<Frame caption="Solid card panel.">
+  <img src="/images/comparisons/card-chrome/solid.png" alt="Solid card panel" />
+</Frame>
+<Frame caption="Glass card panel.">
+  <img src="/images/comparisons/card-chrome/glass.png" alt="Glass card panel" />
+</Frame>
+<Frame caption="Transparent card panel (Premium).">
+  <img src="/images/comparisons/card-chrome/transparent.png" alt="Transparent card panel" />
+</Frame>
+
+## Glass & blur (Premium)
+
+This collapsible group has two opt-in sliders:
+
+- **Custom backdrop blur** — checkbox to enable, then a slider from `0` to `40` px. Off uses the preset's default.
+- **Custom panel opacity** — checkbox to enable, then a percentage slider for how much of the page background bleeds through.
+
+Both are Premium-only.
+
+## Where the accent color lives
+
+Not on this panel. The **accent color** picker is on the [Name & about me](/profile/name-and-about) panel because it's tied to text / link styling.
+
+## Where the page background lives
+
+Not on this panel either. See [Page background](/media/page-background) for the image / video behind the card.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My card looks crowded">
+    Switch the **Card width** to **Wide** or **Full**, or pick the **Modern** structure preset.
+  </Accordion>
+  <Accordion title="The blur is too much / too little">
+    Open the **Glass & blur** group, tick **Custom backdrop blur**, and slide between 0 and 40 px. (Premium feature.)
+  </Accordion>
+  <Accordion title="I want my background to show through fully">
+    Set **Card panel** to **Transparent** (Premium). Note that text legibility depends on the background — consider darkening the background or applying a [Text effect](/appearance/text-effects) outline.
+  </Accordion>
+  <Accordion title="Where do I change the page background itself?">
+    Different panel — see [Page background](/media/page-background). Card layout is only the card frame.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Page background" icon="image" href="/media/page-background">
+    What's behind the card.
+  </Card>
+  <Card title="Text effects" icon="sparkles" href="/appearance/text-effects">
+    Gradient, glow, outline (Premium).
+  </Card>
+</CardGroup>

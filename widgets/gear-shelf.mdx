@@ -1,0 +1,67 @@
+---
+title: "Gear shelf widget"
+description: "A 'what I use' grid — up to 48 product cards with image, name, category, and link. In card placement it appears as a single button that opens a modal."
+keywords: ["gear", "gear shelf", "what i use", "setup", "products", "amazon", "affiliate", "what mouse", "what mic", "store", "shop", "buy what i use", "loadout", "kit", "shelf"]
+---
+
+<Note>
+Add from: <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">Widgets → Add widget → Gear shelf</a>
+</Note>
+
+A "what I use" grid. In **card placement** the widget renders as a single button (default label "Gear"); tapping it opens a modal of product cards. In **scroll-page placement** the grid is rendered inline.
+
+## Widget options
+
+| Option | What it does |
+|--------|--------------|
+| **Label** | Button label in card placement (max 80 chars). |
+| **Grid columns** (`gearGridColumnsPerRow`) | 1–12. Defaults to auto-fit. |
+| **Item size** | `small` or `large` tiles. |
+| **Item chrome** | `solid` / `transparent` / `glass` / `blur`. |
+| **Item labels** | Toggle the name + category text under each tile. |
+| **Spread partial rows** | Auto-fit the bottom row to span full width. |
+
+## Per-item fields
+
+Each `items[]` row has:
+
+| Field | What it does |
+|-------|--------------|
+| **Name** | Product label (max 200 chars). Empty = falls back to the shop hostname or "Product". |
+| **Category** *(optional)* | Like "Mouse", "Keyboard", "Mic". Max 80 chars. |
+| **Image** | **Upload-only.** Goes through the widget uploader (`isGearShelfImagePath`) — external image URLs are rejected by the schema. JPEG / PNG / WebP / GIF, max 2 MiB. |
+| **Product page URL** | **Required.** Must be a valid `http(s)://` URL. |
+
+The dashboard has a **"Set link to Amazon search"** helper — when you've typed a name, it fills the URL with `https://www.amazon.com/s?k=<name>`. Handy for affiliate-free listings or when you don't have a specific link.
+
+## Limits
+
+- **48 items** per gear shelf widget (`items.max(48)`).
+- **16 widgets** total per profile.
+- Each image upload max 2 MiB.
+
+## Tips
+
+- **Square images** look best in the grid — most product press shots are already square.
+- Group by **category** — visitors can scan "Mics" / "Keyboards" / "Cameras" instead of skimming 48 items.
+- Take your own product photos for a unique vibe, or download manufacturer press shots (be aware of usage rights).
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I link to Amazon affiliate URLs?">
+    Yes — paste any URL you want as the product page URL. Make sure your affiliate disclosures comply with Amazon's terms.
+  </Accordion>
+  <Accordion title="Why can't I link to an image hosted elsewhere?">
+    For safety + uptime — third-party images can disappear or change. The upload-only rule means your gear shelf keeps working forever, and the schema enforces it (`isGearShelfImagePath`).
+  </Accordion>
+  <Accordion title="What's the cap on items?">
+    48 items per widget. If you need more, add a second gear shelf widget.
+  </Accordion>
+  <Accordion title="Can I have multiple gear shelves?">
+    Yes — add a second widget. Useful for "Streaming gear" / "Photo gear" / "Daily carry".
+  </Accordion>
+  <Accordion title="My item rejected with 'Paste the product page link'">
+    The product URL is required and must start with `http://` or `https://`. Bare hostnames (`example.com`) won't validate.
+  </Accordion>
+</AccordionGroup>

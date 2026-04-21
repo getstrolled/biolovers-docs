@@ -1,0 +1,76 @@
+---
+title: "Donations (Donator tier badge)"
+description: "Donate $1.99–$1,000 to support the project. Three lifetime tiers: Bronze at $10, Silver at $50, Gold at $100."
+keywords: ["donate", "donation", "support", "tip the dev", "donator badge", "donator tier", "bronze", "silver", "gold", "guardian", "legend", "lifetime total", "tier", "tip", "give", "fund", "back the project", "patreon equivalent"]
+---
+
+<Note>
+Donate: <a href="https://biolovers.site/upgrades/donate" target="_blank" rel="noopener">biolovers.site/upgrades/donate</a> — any amount $1.99–$1,000.
+</Note>
+
+<Frame caption="Donate page.">
+  <img src="/images/money/donate-checkout.png" alt="Donate upgrade page" />
+</Frame>
+
+## How tiers work
+
+Donations are tracked by **lifetime total** in USD across all your payments (`Profile.lifetimeDonatedUsdCents`). The unlocks are driven by `donator-tier.ts`:
+
+| Slug | Lifetime total threshold |
+|------|--------------------------|
+| `donator_bronze` | ≥ $10 |
+| `donator_silver` | ≥ $50 |
+| `donator_gold` | ≥ $100 |
+
+The marketing page brands the tiers as **Donator · Guardian · Legend** but on the wire they're stored as the bronze/silver/gold slugs above. Only the **highest tier** ever shows on your profile (`applyDonatorTierReplace`) — donating $5 then $5 = bronze; donating $50 = silver.
+
+## Limits
+
+- **Per-donation minimum:** $1.99 (`DONATOR_MIN_USD_CENTS = 199`).
+- **Per-donation maximum:** $1,000 (`DONATOR_MAX_USD_CENTS = 100000`).
+- Smaller-than-bronze donations still count toward your lifetime total.
+
+## How to donate
+
+1. Open the donate page.
+2. Pick a **preset amount** (or type a custom number — minimum $1.99).
+3. Pick a **purpose** (required radio):
+   - **Server costs** — keep the lights on.
+   - **Feature dev** — a vote for new features.
+   - **Bless us** — no preference.
+4. Tap **Purchase**.
+5. Pay with **Card** or **Crypto** in the popup.
+
+The tier (and matching Discord role, if you have Discord linked) updates the moment payment confirms.
+
+## Discord roles
+
+If you've linked Discord (see [Discord & Telegram](/connections/discord-telegram)) and are in our community server, the matching tier role is granted **automatically** by `tryGrantDiscordDonatorRole`. Lower-tier roles are removed when you cross into a higher tier.
+
+## Progress bar
+
+The page shows your **lifetime total** + how much is left to the next tier ("$23 to silver"), or "max tier reached" once you're at gold.
+
+## Receipts
+
+We send a **branded Biolovers receipt email** when payment confirms (Stripe sends its own as well; NOWPayments does not). The email goes to your verified address on file.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Are donations tax-deductible?">
+    No. We're not a registered non-profit. Donations are appreciated but not tax-deductible.
+  </Accordion>
+  <Accordion title="Can I downgrade my tier?">
+    No. Lifetime totals only go up.
+  </Accordion>
+  <Accordion title="Can I get a donation refunded?">
+    Donations are voluntary contributions and **are not refundable** once the payment has completed (any tier, any amount, any purpose). The narrow exception is a clear duplicate or obvious typo where you contact support promptly. See [Refunds](/premium/refunds).
+  </Accordion>
+  <Accordion title="Will my old donations count if I missed the tier system?">
+    All previous payments are summed — when the system rolled out, existing donator totals were credited.
+  </Accordion>
+  <Accordion title="Can I see my donation history?">
+    Receipts go to your email after each payment. We don't currently expose a list in the dashboard, but it's on the roadmap.
+  </Accordion>
+</AccordionGroup>

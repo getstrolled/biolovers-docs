@@ -1,0 +1,63 @@
+---
+title: "Pay with crypto (NOWPayments)"
+description: "Buy Premium / Verified / Donate / Custom-badge slots with BTC, ETH, USDC, and 100+ other coins."
+keywords: ["crypto payment", "bitcoin", "btc", "eth", "ethereum", "usdc", "usdt", "ltc", "doge", "monero", "xmr", "ton", "bnb", "sol", "trx", "buy premium with crypto", "nowpayments", "crypto checkout", "qr code", "wallet", "no card needed", "no cc"]
+---
+
+Crypto payments use **NOWPayments**. The whole flow stays **on biolovers.site** — pick a coin, we show you an address + amount + QR code, you send the funds, our page polls until your payment confirms.
+
+## What you can buy
+
+- **Premium** ($6.99 lifetime) — see [What Premium unlocks](/premium/what-premium-unlocks)
+- **Verified** ($19.99 lifetime) — see [Verified](/premium/verified)
+- **Donations** ($1.99 – $1,000) — see [Donations](/premium/donations)
+- **Custom badge slots** ($4.99/slot, volume discount) — see [Custom badges](/badges/custom-badges)
+
+## How to pay
+
+1. Go to the checkout page (e.g. <a href="https://biolovers.site/premium" target="_blank" rel="noopener">/premium</a>).
+2. Tap **Purchase**.
+3. In the popup, pick **Cryptocurrency**.
+4. Choose your coin from the searchable picker.
+5. Accept **Terms** + **Refund policy**.
+6. Tap **Purchase — $X.XX**.
+7. The page swaps to a panel with:
+   - Pay-to **address** (long string)
+   - Exact **amount** in that coin (quoted from the USD price at the moment of purchase)
+   - **QR code** for mobile wallets
+   - **Status badge** (waiting / confirming / paid)
+8. Send the **exact amount** from your wallet.
+9. The page polls every few seconds. When NOWPayments reports `finished`, your account is upgraded.
+
+## Important
+
+- **Send the exact amount.** Underpaying = no upgrade. The amount is quoted at purchase and can drift if the network is slow — see [Refunds](/premium/refunds) for what we can do if a payment lands late.
+- **Don't close the page** until the status is `finished` — your status panel will tell you when it's safe.
+- **Confirmation time** depends on the coin. BTC ~30 minutes; USDT (TRC20) ~1 minute; ETH ~5 minutes.
+- If your coin has a **minimum amount** higher than the order total, the API will refuse — use a different coin (USDT/USDC TRC20 usually have low minimums).
+
+## Receipts
+
+We send a branded Biolovers receipt email once payment confirms. NOWPayments do **not** send their own — only the on-page status reflects their side.
+
+You **must have a verified email** to checkout (the API enforces this — see [Email](/account/email)).
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My payment is stuck on 'waiting'">
+    NOWPayments shows `confirming` once the network sees your transaction (usually after 1 confirmation). It then needs the coin's full confirmation count. Bitcoin can take 30+ minutes. Don't resend.
+  </Accordion>
+  <Accordion title="I sent the wrong amount">
+    Underpayments aren't auto-credited. Open a ticket through our <a href="https://biolovers.site/contact" target="_blank" rel="noopener">contact form</a> with the transaction hash + the order ID — the team can usually credit you manually.
+  </Accordion>
+  <Accordion title="Can I get a refund?">
+    See [Refunds](/premium/refunds). Crypto transactions are typically irreversible once confirmed; refunds are issued at the conversion rate at the time we send them, in a coin we support, with network fees not reimbursed.
+  </Accordion>
+  <Accordion title="Why does the page say 'crypto unavailable for this amount'?">
+    The provider's minimum for that coin is higher than your order. Pick a different coin (USDC / USDT usually have low minimums).
+  </Accordion>
+  <Accordion title="Did I miss the receipt email?">
+    Crypto receipts come from us, not NOWPayments. Check spam, then your account email is the right address — verify it on the [Email](/account/email) panel.
+  </Accordion>
+</AccordionGroup>

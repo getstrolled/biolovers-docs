@@ -1,0 +1,32 @@
+---
+title: "Audio won't autoplay"
+description: "Browsers block music until the visitor interacts with the page. Here's how to make it work anyway."
+keywords: ["audio wont play", "music wont play", "no sound", "autoplay blocked", "no audio", "song stuck", "music doesnt start", "iphone music", "safari audio", "chrome blocks", "low power mode"]
+---
+
+If your background music doesn't start automatically when visitors open the page, **the browser is doing exactly what it's supposed to**. Browsers block audio that starts on its own — too many ads abused autoplay over the years.
+
+## The fix: a splash screen
+
+Turn on a **click-to-enter splash** ([Splash panel](/media/splash)). The visitor's tap on the splash counts as the user interaction the browser needs to allow audio.
+
+After the tap, music starts. This is by far the most reliable solution.
+
+## Other things to check
+
+- **Default volume** isn't 0 — see the [Audio panel](/media/background-music).
+- **Show on profile** toggle is on.
+- **Track file** is intact — re-upload if it sounds corrupted.
+- **iPhone in Low Power Mode** — iOS aggressively blocks background audio in Low Power Mode. Even a tap won't reliably start it. Nothing we can override.
+- **Safari with strict tracking-prevention** — sometimes refuses to play. Test in Chrome / Firefox to confirm.
+
+## Visitor side
+
+If you're testing your **own** profile and audio doesn't start:
+
+1. **Click anywhere** on the page first. That's the gesture browsers want.
+2. The on-page audio bar **Play** button always works — visitors can tap it manually.
+
+## Why we can't "just fix it"
+
+Browser audio policies are baked into Chrome / Safari / Firefox at the engine level. There's no website-side workaround. The splash screen is the universally accepted pattern.

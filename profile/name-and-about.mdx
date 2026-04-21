@@ -1,0 +1,99 @@
+---
+title: "Name & about me"
+description: "Display name, optional typewriter rotation, and your short bio with a small markdown subset."
+keywords: ["display name", "name", "real name", "nickname", "title", "tagline", "subtitle", "about me", "bio", "description", "markdown", "typewriter", "rotating text", "animated text", "change my name", "set my bio"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/profile/about" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/profile/about</a>
+</Note>
+
+This is the text part of your profile — the big name at the top, the @handle right next to it, and the short bio below.
+
+<Frame caption="The Name & about me panel.">
+  <img src="/images/dashboard/profile-about.png" alt="Display name and about me panel" />
+</Frame>
+
+## Display name
+
+The big name at the top of your profile.
+
+- Up to 64 characters.
+- Emojis and Unicode work.
+- Different from your **username** (login name). You can be `awesome_user_42` in URLs and "✦ Atlas ✦" on the page.
+
+Leave it empty to fall back to `@username`.
+
+### Display name size
+
+Pick from a small set of size presets in the same panel — they affect just the display name, not the rest of the card.
+
+### Accent color
+
+The **accent color** picker lives on this panel too. It drives buttons, link hovers, and the highlight color used elsewhere on the card.
+
+## Typewriter (animated rotation)
+
+A typewriter effect can rotate through multiple phrases on the **display name**, **@handle**, or **bio** — one per line in the phrases input. Useful for showing several taglines without taking up extra space.
+
+| Option | What it does |
+|--------|--------------|
+| **Phrases (one per line)** | The list to rotate through. Each line is one phrase. |
+| **Speed** | How fast each character types. |
+| **Loop** | When off, types the last phrase once and stops. When on, cycles forever. |
+
+<Note>
+The typewriter feature is **Premium**. Free accounts see the toggle but it stays disabled. The same controls also gate the (Premium-only) **browser tab title typewriter** — see [Browser tab](/appearance/browser-tab).
+</Note>
+
+## About me / bio
+
+A short paragraph below your handle. The dashboard editor caps it at **200 characters**, so think of it as a one-liner, not an essay.
+
+It supports a small **markdown** subset rendered through a custom safe renderer:
+
+| Syntax | Result |
+|--------|--------|
+| `**bold**` | **bold** |
+| `*italic*` | *italic* |
+| `__underline__` | underlined |
+| `~~strike~~` | ~~strike~~ |
+| `# Heading` (h1–h4) | A heading |
+| `[label](https://link)` | a link |
+| `<center>centered</center>` | center-aligned text |
+| `<right>right</right>` / `<left>left</left>` | alignment wrappers |
+
+Line breaks in the editor are real line breaks — no need for `<br>`.
+
+What is **not** supported: bullet lists (`-`), numbered lists, code fences, blockquotes (`>`), horizontal rules (`---`), and inline images (`![]()`). The renderer also strips raw HTML and scripts. If you need richer content (images, lists, embeds), use a [Markdown infobox widget](/widgets/markdown-infobox) below the card instead — it has the same renderer but a much higher character cap.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Where do emojis go?">
+    Anywhere. Display name, bio. Tap your system emoji picker (Win + `.` on Windows, Ctrl + Cmd + Space on Mac).
+  </Accordion>
+  <Accordion title="Can I have a colored name?">
+    Yes — apply a [Text effect](/appearance/text-effects) (gradient or glow) to the display name. Premium feature.
+  </Accordion>
+  <Accordion title="Can I have a separate 'tagline' under my name?">
+    There's no dedicated tagline field. Use the typewriter (Premium) on the display name with multiple phrases, or put a one-line tagline at the start of your bio.
+  </Accordion>
+  <Accordion title="My bio cuts off at 200 characters">
+    That's the editor's hard cap. For longer text, add a [Markdown infobox widget](/widgets/markdown-infobox) below your card — it accepts up to 12,000 characters.
+  </Accordion>
+  <Accordion title="My link in the bio isn't tappable">
+    Make sure you used the markdown syntax: `[label](https://full-url-with-https.com)`. Plain text URLs aren't auto-linked.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Stats line under your name" icon="info" href="/profile/stats-corner">
+    Views, joined, location, timezone meta pills.
+  </Card>
+  <Card title="Text effects" icon="sparkles" href="/appearance/text-effects">
+    Make your name pop (Premium).
+  </Card>
+</CardGroup>

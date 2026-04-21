@@ -1,0 +1,104 @@
+---
+title: "Browser tab (favicon, title, share preview)"
+description: "Customize the title and icon visitors see in their browser tab — plus the link-preview banner used by Discord, Slack, and iMessage. Premium."
+keywords: ["browser tab", "tab title", "favicon", "icon", "page title", "title bar", "tab", "open graph", "og image", "share preview", "discord embed", "link preview", "theme color", "address bar color", "google snippet", "seo description"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/look/browser-tab" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/look/browser-tab</a>
+</Note>
+
+<Tip>
+This panel is **Premium-only**. Free accounts see the panel but the inputs are locked, with the default tab title `Biolovers | "@yourname"` and the default favicon.
+</Tip>
+
+<Frame caption="Browser tab panel.">
+  <img src="/images/dashboard/look-tab.png" alt="Browser tab panel" />
+</Frame>
+
+## What this panel changes
+
+Two surfaces:
+
+1. **Browser tab** — the title and icon your visitor sees pinned to the top of the browser.
+2. **Link previews + Google snippet** — the big card that appears when your URL is pasted into Discord / iMessage / Slack / Twitter, plus the Google search result.
+
+## Custom tab title
+
+Free text up to 70 characters. Empty = default `Biolovers | "@yourname"`.
+
+Examples:
+
+- `My studio`
+- `Atlas — sound design`
+- `Now playing 🎵`
+
+## Tab title typewriter
+
+Animates the tab title letter-by-letter and (optionally) rotates through extra phrases.
+
+| Control | What it does |
+|---------|--------------|
+| **Phrases (one per line)** | Lines to rotate through. |
+| **Speed** | How fast each character types. |
+| **Loop** | Replay forever or stop after the last phrase. |
+
+The typewriter on the tab title is part of the same **Premium typewriter** feature used on display name / @handle / bio — it stays disabled on the free tier.
+
+## Favicon
+
+The little icon in the browser tab.
+
+- Formats: **PNG / WebP / GIF / JPEG / SVG**.
+- Max **512 KB**.
+- Square images crop best (browser tabs are square).
+
+Hit **Remove** to revert to the default Biolovers icon.
+
+## Link preview & SEO
+
+This block controls how your page looks **outside** of biolovers.site — Google search results, Discord/Slack/iMessage embeds, Twitter cards.
+
+### Page description
+
+Up to **320 characters**. Used as:
+
+- The Google snippet shown under your title in search results.
+- The subtitle in Discord / iMessage / Twitter previews.
+
+If empty, we use the first ~160 characters of your bio.
+
+### Theme color
+
+A hex color used for:
+
+- The mobile browser address-bar tint when your page is open.
+- The colored stripe down the side of Discord / Slack / iMessage previews.
+
+### Share-preview banner (Open Graph image)
+
+The big image at the top of social embeds.
+
+- **Best size:** 1200 × 630 px.
+- **Formats:** PNG / JPEG / WebP / GIF.
+- **Max:** 2 MB.
+- You can upload a file **or** paste an `https://` URL.
+
+If empty, the embed shows **the site's default OG card** — not your avatar. Set this if you want a custom share image.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My new favicon shows the old one">
+    Browsers cache favicons aggressively. Hit Ctrl/Cmd+Shift+R to hard-refresh. On mobile, fully closing the tab and reopening usually clears it.
+  </Accordion>
+  <Accordion title="Discord still shows the old preview after I changed it">
+    Discord caches embeds for ~24h. To force a refresh, paste the link into a private channel — Discord re-fetches when the URL appears in a place it hasn't seen recently.
+  </Accordion>
+  <Accordion title="Why is the panel grey?">
+    You're on the free tier. See [What Premium unlocks](/premium/what-premium-unlocks) — the Browser tab panel is Premium-only.
+  </Accordion>
+  <Accordion title="Can I make the tab title rotate forever?">
+    Yes — turn on the **Loop** toggle on the typewriter. Note that this can be a battery drain on phones.
+  </Accordion>
+</AccordionGroup>

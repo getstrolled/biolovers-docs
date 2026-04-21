@@ -1,0 +1,37 @@
+---
+title: "Custom font not loading"
+description: "Why your uploaded font might not show, and how to fix it."
+keywords: ["font not loading", "custom font", "uploaded font", "font not showing", "font wrong", "woff2", "ttf", "otf", "default font", "font fallback"]
+---
+
+If your uploaded custom font isn't applying on the public page, walk through this checklist.
+
+## 1. Format
+
+Supported: **WOFF2**, **OTF**, **TTF**.
+
+WOFF2 is **strongly preferred** — smallest file size and best browser support. If you only have a TTF, [convert to WOFF2 online](https://www.fontsquirrel.com/tools/webfont-generator).
+
+## 2. Size
+
+Max **2 MB** per font file. Big fonts (multiple weights bundled into one TTF) often blow this limit. Use a single-weight WOFF2 instead.
+
+## 3. License
+
+This is on you — make sure you have rights to the font. Premium fonts from Google Fonts can be downloaded and uploaded; commercial fonts (Helvetica, Adobe foundry stuff) usually require a webfont license.
+
+## 4. Browser cache
+
+After re-upload, hard-refresh the public page (Ctrl+Shift+R / Cmd+Shift+R). Browsers cache fonts aggressively; the old one may stick around for a while.
+
+## 5. Per-widget vs profile-wide
+
+The infobox widget has its **own** font upload — it overrides only that widget. The profile-wide [Fonts panel](/appearance/fonts) sets the heading and body fonts. Make sure you're editing the right one.
+
+## 6. Font-display behavior
+
+We load custom fonts with `font-display: swap` — visitors briefly see a fallback font, then your custom font replaces it once loaded. If your font is a slow-loading TTF on a slow connection, this swap is noticeable.
+
+## Still not working?
+
+Open a thread in [Discord](https://biolovers.site/discord) with the font file attached and your username. We'll check the upload logs.

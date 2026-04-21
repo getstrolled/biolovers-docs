@@ -1,0 +1,66 @@
+---
+title: "Make an account"
+description: "Sign up for Biolovers in about a minute — pick a username, set a password, optionally add an email so you can reset later."
+keywords: ["sign up", "signup", "register", "create account", "new account", "make account", "join", "get started", "verification code", "email otp"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/register" target="_blank" rel="noopener">dashboard.biolovers.site/register</a>
+</Note>
+
+<Frame caption="Sign-up form on the dashboard.">
+  <img src="/images/auth/register.png" alt="Sign-up form" />
+</Frame>
+
+## What you fill in
+
+| Field | What it does |
+|-------|--------------|
+| **Username** | Your public page URL becomes `biolovers.site/<username>`. 1–32 characters, lowercase letters, numbers, underscores, or hyphens. You can change it later. |
+| **Password** | At least 8 characters. We hash it before saving — we never see the original. |
+| **Confirm password** | Has to match the field above. |
+| **Email** *(optional, recommended)* | If you add one, we send a 6-digit code to confirm it. Used for password resets and purchase receipts. You can add or change it any time from the dashboard. **Required to buy any upgrade.** |
+| **Terms / Privacy / Refund** | Three checkboxes you have to tick before the button works. |
+
+The submit button reads **Create account** if you skipped email, or **Send verification code** if you added one. With an email, you'll then see a "Confirm your email" step asking for the 6-digit code from your inbox.
+
+<Tip>
+You **don't have to** add an email at sign-up. But if you ever forget your password and have no email on file, the only path back in is contacting support and proving the account is yours — see [No email and forgot password](/troubleshooting/no-email-no-password). Adding the email later is one click in [Email](/account/email).
+</Tip>
+
+## After you sign up
+
+You land on the **dashboard** (the `/edit` page). From there:
+
+1. Open [Profile → Domain & URL](/profile/domain-and-url) to confirm your username.
+2. Open [Profile → Name & about me](/profile/name-and-about) to set your display name and bio.
+3. Open [Media → Avatar](/media/avatar) to upload a profile picture.
+4. Open `biolovers.site/<your-username>` in a new tab to **preview your page**.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Is sign-up free?">
+    Yes. The free tier covers everything except the Premium-only extras listed in [what Premium unlocks](/premium/what-premium-unlocks). No credit card needed at signup.
+  </Accordion>
+  <Accordion title="Can I change my username later?">
+    Yes — see [Domain & URL](/profile/domain-and-url). Old links to the old username won't redirect, so tell people the new one.
+  </Accordion>
+  <Accordion title="What if my username is already taken?">
+    The form will tell you and refuse to submit. Pick another, or add numbers / underscores / hyphens. You can also set an **alias slug** later (a second URL that points at the same page — Premium feature).
+  </Accordion>
+  <Accordion title="My email never came">
+    Check **Spam / Promotions** first — codes can land there. The verify step has a **Resend code** button. Codes expire after 15 minutes; if it's still missing after a resend, double-check the address you typed.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Log in" icon="key" href="/getting-started/log-in">
+    Sign back in next time.
+  </Card>
+  <Card title="Forgot password" icon="rotate" href="/getting-started/forgot-password">
+    Reset by email if you've added one.
+  </Card>
+</CardGroup>

@@ -1,0 +1,43 @@
+---
+title: "I lost my 2FA device"
+description: "Phone died, app reinstalled, codes gone. What to try and when to contact support."
+keywords: ["lost 2fa", "lost authenticator", "phone died", "lost phone", "reinstalled authenticator", "google authenticator wipe", "authy reset", "no codes", "cant get in", "locked out", "disable 2fa", "remove 2fa", "no totp"]
+---
+
+Lost the device with your authenticator app? Don't panic — but the recovery is more manual than the password reset, because **email password resets do not turn off 2FA** on Biolovers.
+
+## Option 1 — Backup TOTP secret (best case)
+
+If you saved the TOTP secret somewhere else when you set up 2FA — a second phone, a password manager that supports TOTP (1Password, Bitwarden, Authy multi-device), or a printed copy of the QR — open it now. The codes it generates will work for sign-in just like the lost device.
+
+Once you're back in:
+
+1. Open the [Two-step sign-in panel](https://dashboard.biolovers.site/dashboard/edit/account/two-factor).
+2. Type your password into **Password (to disable 2FA)** and tap **Disable 2FA**.
+3. Then **Set up authenticator** again on your new device, this time saving the secret to two places.
+
+## Option 2 — Authenticator app cloud restore
+
+Some apps back up to your account:
+
+- **Google Authenticator** — sign into the same Google account on a new phone, restore from cloud.
+- **Authy** — multi-device feature, restore from your Authy account.
+- **Microsoft Authenticator** — cloud backup if you enabled it.
+
+If your app supported this and you turned it on, the codes can come back even after a wipe.
+
+## Option 3 — Contact support
+
+If you have **neither** a backup TOTP secret **nor** a cloud restore option, support has to manually disable 2FA on the account. They'll only do this if you can prove the account is yours — see [No email and forgot password](/troubleshooting/no-email-no-password) for the kind of evidence to send.
+
+Reach support: open <a href="https://biolovers.site/discord" target="_blank" rel="noopener">biolovers.site/discord</a> and DM staff, or email <a href="mailto:support@biolovers.site">support@biolovers.site</a>. Verification can take a few days.
+
+<Warning>
+Email password reset does **not** disable 2FA on Biolovers — even if you reset your password, the next sign-in will still ask for the authenticator code. So if you only have your email but no authenticator, the password reset alone won't get you in. You still need Option 1, 2, or 3.
+</Warning>
+
+## To prevent this next time
+
+- When setting up 2FA, **scan the QR on two devices** (or copy the secret to a password manager that does TOTP).
+- Print the QR or copy the secret string into a sealed envelope / safe.
+- Add a verified email to the account so support can reach you.

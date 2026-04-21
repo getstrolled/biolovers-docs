@@ -1,0 +1,59 @@
+---
+title: "Custom cursor"
+description: "Replace the mouse arrow with a small PNG or WebP image. Optional fading trail."
+keywords: ["cursor", "mouse", "pointer", "custom cursor", "trail", "leave trail", "cursor trail", "cursor effect", "image cursor", "remove cursor", "anime cursor", "cute cursor"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/media/cursor" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/media/cursor</a>
+</Note>
+
+Replaces the mouse arrow on your **public page** with an image of your choice. Doesn't change anything in the dashboard.
+
+<Frame caption="Custom cursor panel.">
+  <img src="/images/dashboard/media-cursor.png" alt="Custom cursor panel" />
+</Frame>
+
+## Upload
+
+- Pick a file in the upload slot.
+- Formats: **PNG / WebP only** — GIF is **not** accepted by the cursor slot.
+- **Max image size: 128 × 128 pixels.** Anything bigger is rejected — browsers refuse to render large cursor images for performance reasons.
+- **Max file size: 512 KB.**
+- Transparent backgrounds work great — use a PNG with alpha.
+
+## Hot-spot
+
+The hot-spot is the **point** of the cursor — where the click registers. The system **auto-centers** it: the click point is the middle of your image. There's no UI to pick a custom hot-spot.
+
+## Trail (optional)
+
+A single checkbox: **Leave trail**. When on, the cursor leaves fading copies for 1.2 seconds.
+
+If you haven't uploaded a custom cursor, the trail falls back to a small accent-coloured dot.
+
+That's it — there are no extra knobs for trail length, fade speed, or colour tint. Trim the trail visually by picking a smaller cursor image.
+
+## Remove
+
+Tap **Remove** under the preview to clear the cursor and revert to the system arrow.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="My cursor isn't showing">
+    Check the file is **PNG or WebP**, **128 × 128 or smaller**, and under **512 KB**. Bigger files won't apply — Chrome's CSS cursor spec caps the size, and the upload slot rejects GIFs.
+  </Accordion>
+  <Accordion title="Why is my click slightly off?">
+    The hot-spot is auto-centered, so design your cursor with the click point in the middle of the canvas. There's no per-pixel hot-spot picker.
+  </Accordion>
+  <Accordion title="Does the trail work on phones?">
+    No — phones don't have a cursor. The trail is desktop-only.
+  </Accordion>
+  <Accordion title="Can I use an animated GIF cursor?">
+    No — the cursor upload slot only accepts PNG and WebP.
+  </Accordion>
+  <Accordion title="Can I tune the trail length / speed / colour?">
+    Not from the dashboard — the trail is a single on / off toggle with a fixed 1.2-second fade.
+  </Accordion>
+</AccordionGroup>
