@@ -24,10 +24,6 @@ Card payments use **Stripe Checkout** — the same secure hosted page powering m
 
 If the popup is blocked, the page shows a **Reopen Stripe** link to recover.
 
-<Note>
-**Google Pay** is not enabled on our Stripe Checkout configuration. The supported wallets are **Apple Pay** + standard card fields.
-</Note>
-
 ## Receipts
 
 You get a **branded Biolovers receipt email** once payment confirms (sent via our own mail pipeline). Stripe also sends its standard receipt with VAT info to the same address.
@@ -49,9 +45,6 @@ See [Refunds](/premium/refunds). Short version: fees are **final and non-refunda
   </Accordion>
   <Accordion title="The Stripe page won't load">
     Pop-up blockers, ad-blockers, or strict tracking-prevention can block Stripe's hosted page. Either allow `*.stripe.com` once, or tap **Reopen Stripe** in the modal.
-  </Accordion>
-  <Accordion title="Can I pay with Google Pay?">
-    Not currently — our Stripe Checkout is configured for cards + Apple Pay. Use a card directly if you don't have an Apple device.
   </Accordion>
   <Accordion title="My payment went through but Premium isn't on my account">
     Wait ~30 seconds — the success page polls until our system confirms the upgrade. If it still doesn't apply, refresh the dashboard. If still missing after 5 minutes, send the Stripe receipt through our <a href="https://biolovers.site/contact" target="_blank" rel="noopener">contact form</a> or open a ticket in <a href="https://biolovers.site/discord" target="_blank" rel="noopener">Discord</a>.
