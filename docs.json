@@ -1,18 +1,24 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Biolovers Help",
-  "description": "How to set up and customize your Biolovers profile — from picking your URL all the way to widgets, audio, and Premium.",
+  "name": "biolovers",
+  "description": "The official help center for biolovers.site \u2014 your link-in-bio profile, the dashboard, and every Premium feature.",
   "colors": {
-    "primary": "#a855f7",
-    "light": "#c4b5fd",
-    "dark": "#7c3aed"
+    "primary": "#ff4f9a",
+    "light": "#ffb3d4",
+    "dark": "#e91e7a"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/images/favicon.svg",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg",
-    "href": "/"
+    "light": "/images/logo/light.svg",
+    "dark": "/images/logo/dark.svg",
+    "href": "https://biolovers.site"
+  },
+  "background": {
+    "color": {
+      "light": "#ffffff",
+      "dark": "#0a0a0c"
+    }
   },
   "navbar": {
     "links": [
@@ -183,5 +189,14 @@
     "body": {
       "family": "Plus Jakarta Sans"
     }
+  },
+  "seo": {
+    "metatags": {
+      "og:site_name": "Biolovers Help",
+      "og:type": "website",
+      "og:image": "/images/favicon.svg",
+      "twitter:card": "summary"
+    },
+    "indexing": "navigable"
   }
 }

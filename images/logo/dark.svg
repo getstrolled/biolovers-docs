@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" fill="none">
+  <path d="M19 33.5S8.6 27.4 8.6 19.4a5.7 5.7 0 0 1 10.4-3.1 5.7 5.7 0 0 1 10.4 3.1c0 8-10.4 14.1-10.4 14.1z" fill="#ff4f9a"/>
+  <text x="42" y="29" font-family="'Plus Jakarta Sans','Inter',system-ui,-apple-system,sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5">
+    <tspan fill="#f8fafc">bio</tspan><tspan fill="#ff4f9a">lovers</tspan>
+  </text>
+</svg>
