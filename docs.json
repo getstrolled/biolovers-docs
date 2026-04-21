@@ -34,7 +34,7 @@
     "primary": {
       "type": "button",
       "label": "Open dashboard",
-      "href": "https://dashboard.biolovers.site"
+      "href": "https://dashboard.biolovers.site/edit"
     }
   },
   "footer": {
@@ -45,7 +45,7 @@
       {
         "header": "Product",
         "items": [
-          { "label": "Make your page", "href": "https://dashboard.biolovers.site" },
+          { "label": "Make your page", "href": "https://dashboard.biolovers.site/edit" },
           { "label": "Pricing", "href": "https://biolovers.site/pricing" },
           { "label": "FAQ", "href": "https://biolovers.site/faq" }
         ]
