@@ -26,10 +26,33 @@ These are the slugs that can appear next to your name (`Profile.siteBadges`). La
 | `donator_bronze` | (catalog) | Lifetime donations ≥ **$10**. |
 | `donator_silver` | (catalog) | Lifetime donations ≥ **$50**. |
 | `donator_gold` | (catalog) | Lifetime donations ≥ **$100**. |
+| `inviter_t1` | Inviter | **5** successful referrals via your `/ref` link. See [Referrals](/account/referrals). |
+| `inviter_t2` | Inviter II | **15** successful referrals. |
+| `inviter_t3` | Inviter III | **50** successful referrals (also unlocks the Verified badge). |
 | `discord_booster` | (catalog) | Auto-synced when you **boost the Biolovers Discord server** (the bot listens for `guildMemberUpdate` / `Add` / `Remove` and toggles the badge). |
 | Custom | (your label) | Bought slots, your own image. See [Custom badges](/badges/custom-badges). |
 
-Only the **highest donator tier** ever shows (`applyDonatorTierReplace`) — bronze is replaced by silver when you cross into silver, and so on.
+Only the **highest donator / inviter tier** ever shows by default — bronze is replaced by silver when you cross into silver, and so on (same goes for Inviter I → II → III). You can change that per family using the modal described below.
+
+## Tiered families
+
+Some badges come in stacks: **Donator** (Bronze / Silver / Gold) and **Inviter** (I / II / III). On your gallery these collapse into a single tile per family. Click the tile to open the **family modal**, where every tier is laid out side-by-side: tiers you already own are highlighted, locked tiers show the unlock hint.
+
+<Frame caption="Inviter family modal — owned tier highlighted, locked ones show how to unlock.">
+  <img src="/images/dashboard/badges-family-modal-inviter.png" alt="Inviter badge family modal" />
+</Frame>
+
+The footer of the modal has a **How this family appears on your profile** segmented control with three options:
+
+- **Show highest only** *(default)* — only the top tier you own appears in your badge strip.
+- **Show all owned** — every tier from I up to your highest displays as separate badges.
+- **Hide from profile** — none of the tiers show on your profile (you keep them earned, they just don't render publicly).
+
+<Frame caption="Display preference picker at the bottom of the family modal.">
+  <img src="/images/dashboard/badges-family-modal-controls.png" alt="Family modal display preferences" />
+</Frame>
+
+The choice is per family, so you can show every Donator tier while keeping just the highest Inviter, or vice versa. Visitors to your public profile can also click any tiered badge to open a read-only version of the same modal so they can see the full ladder.
 
 ## Discord profile badges (separate)
 

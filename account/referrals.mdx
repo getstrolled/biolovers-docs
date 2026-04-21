@@ -1,0 +1,120 @@
+---
+title: "Referrals"
+description: "Invite friends with your /ref link. Each signup is +1 invite, and each friend who buys Premium is another +5. Unlock badges, free Premium, and a free custom badge slot as you go."
+keywords: ["referral", "referrals", "invite", "invites", "ref", "refer a friend", "share link", "invite link", "referral link", "referral code", "inviter badge", "free premium", "free custom badge slot", "rewards", "tiers", "leaderboard", "promo", "promo link", "share my profile"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/referrals" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/referrals</a>
+</Note>
+
+Every account gets a referral link of the form **`biolovers.site/ref/yourname`** (using your username). When friends click it and create an account, you get **+1 invite**. When one of those friends later buys Premium, you get another **+5 invite points** on top.
+
+Hit the right thresholds and we unlock badges, free Premium, or a free custom badge slot for you automatically.
+
+<Frame caption="The Referrals panel — your link, lifetime stats, the reward ladder, and a table of recent redemptions.">
+  <img src="/images/dashboard/referrals-panel.png" alt="Referrals dashboard panel" />
+</Frame>
+
+## Your link
+
+The first card on the panel shows your link and your username code. Both buttons copy to your clipboard.
+
+<Frame caption="Your referral link and live stat cards.">
+  <img src="/images/dashboard/referrals-link-and-stats.png" alt="Referral link and stats cards" />
+</Frame>
+
+- **Link** – e.g. `https://biolovers.site/ref/showcase`. Drop this into your bio, a tweet, a Discord post.
+- **Code** – just the username at the end (`showcase`). Useful when you want to say *"use code SHOWCASE on signup"* instead of pasting a URL.
+- The cookie that ties the click to your account is good for **30 days**. If a friend clicks today and signs up next week, you still get credit.
+
+<Tip>
+Your link is also your **username**. If you change your username, your referral link changes with it — but redemptions you already earned stay attached to your account.
+</Tip>
+
+## What counts as a referral
+
+| Action your friend takes | What happens for you |
+|--------------------------|----------------------|
+| Clicks `biolovers.site/ref/yourname` and **creates a new account** within 30 days | **+1 invite** |
+| Clicks the link, but they **already have an account** | Nothing earned. The redemption gets logged in your table so you can see they used it. |
+| One of your referred friends **buys Premium** later | **+5 invite points** added on top |
+| The same friend buys Verified, donates, or buys custom badge slots | Nothing extra — only Premium adds the bonus. |
+
+The "Total invites" stat at the top combines both signups and the +5 premium bonuses, and that combined number is what the reward ladder checks against.
+
+## Reward tiers
+
+Hit any of these and the reward unlocks the moment the qualifying signup or premium purchase lands.
+
+<Frame caption="The reward ladder. Reached tiers light up green.">
+  <img src="/images/dashboard/referrals-reward-tiers.png" alt="Referral reward tiers" />
+</Frame>
+
+| Total invites | Reward |
+|---------------|--------|
+| **5** | **Inviter badge** on your profile |
+| **15** | **Inviter badge tier 2** — replaces tier 1 |
+| **25** | **Free Premium** for life. If you already have Premium, you get **+1 custom badge slot** instead. |
+| **50** | **Verified badge** (the blue check) **+ Inviter badge tier 3** |
+
+The Inviter badges are part of a [tiered badge family](/badges/earned-badges#tiered-families) — only the highest one shows by default, but you can pop open the family modal in the Badges panel and choose to display all three at once.
+
+<Frame caption="Inviter family modal. Owned tiers are highlighted; locked ones show how they unlock.">
+  <img src="/images/dashboard/badges-family-modal-inviter.png" alt="Inviter badge family modal" />
+</Frame>
+
+## Recent redemptions
+
+The bottom section shows the latest 50 people who used your link. Each row tells you whether the redemption gave you signup credit, whether it has earned the Premium bonus yet, and when it happened.
+
+<Frame caption="Recent redemptions table.">
+  <img src="/images/dashboard/referrals-recent-redemptions.png" alt="Referrals recent redemptions table" />
+</Frame>
+
+| Column | Meaning |
+|--------|---------|
+| **User** | The friend's `@username`. If they later deleted their account it shows `(account removed)`. |
+| **Source** | `Joined` = they made a brand-new account on your link. `Existing user` = they already had an account, so no signup credit. |
+| **When** | Local time the redemption happened. |
+| **Premium?** | `+5 (date)` once they have bought Premium and the bonus has been credited. `—` until then. |
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="A friend signed up with my link but I don't see them in the table">
+    Refresh the panel — the table updates as soon as their account is created. If you still don't see them, they may have signed up before clicking your link (the cookie only sticks if the click happens before the account is created).
+  </Accordion>
+  <Accordion title="Can I redeem my own link to bump my own count?">
+    No. The link refuses to count anything when it is opened from the same account, and we also block clicks that look like they came from your own network — opening your link from your phone on home Wi-Fi while logged in as the inviter won't credit you.
+  </Accordion>
+  <Accordion title="I already redeemed someone else's link. Can I switch?">
+    Each account can only redeem **one** referral code, ever, and it's permanent. Visiting another inviter's link will show a "you've already redeemed @other" warning instead of switching the attribution.
+  </Accordion>
+  <Accordion title="Does it count if my friend buys Premium with crypto vs card?">
+    Yes — both Stripe (card) and NOWPayments (crypto) Premium purchases trigger the +5 bonus. Only **Premium** triggers it; Verified, donations, and custom badge slot purchases don't add anything to your invites.
+  </Accordion>
+  <Accordion title="When does the 25-invite Premium reward kick in?">
+    The instant your total crosses 25, **if you don't already have Premium**. It's a one-time grant. If you already had Premium when you crossed the threshold (or you got Premium later from a different purchase), you get **+1 custom badge slot** instead — also one-time.
+  </Accordion>
+  <Accordion title="Can I disable my referral link?">
+    There's no off switch — every account has one — but you simply don't have to share it. The link won't accidentally credit anyone unless someone actually clicks it and signs up.
+  </Accordion>
+  <Accordion title="The link goes to biolovers.site, but I share my profile on a custom domain. Will the same link work?">
+    The referral link always lives on `biolovers.site/ref/yourname`. After we set the cookie we redirect the click to the signup page on `dashboard.biolovers.site` — your custom profile domain isn't involved.
+  </Accordion>
+  <Accordion title="Something looks wrong with my count">
+    Open a ticket in our [Discord](https://biolovers.site/discord) or use our [contact form](https://biolovers.site/contact) and we'll look at the redemption log.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Earned badges" icon="badge-check" href="/badges/earned-badges">
+    The Inviter, Verified, Donator, and other tiered badges your link unlocks.
+  </Card>
+  <Card title="Custom badges" icon="palette" href="/badges/custom-badges">
+    The 25-invite reward gives you a free custom slot if you already have Premium.
+  </Card>
+</CardGroup>
