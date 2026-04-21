@@ -105,4 +105,4 @@ Small PRs ship faster than big ones. If you're rewriting a whole section, open a
 
 ## Questions
 
-Drop a message in the [Biolovers Discord](https://biolovers.site/discord) or email <support@biolovers.site>.
+Open a ticket in our [Discord](https://biolovers.site/discord) or use our [contact form](https://biolovers.site/contact).

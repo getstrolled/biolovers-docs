@@ -47,9 +47,7 @@ npm run broken-links
 
 Improvements, fixes, and new pages are welcome — see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-## Deployment
-
-See [DEPLOY.md](./DEPLOY.md) for Mintlify project + custom domain setup.
+Pushes to `main` deploy automatically via Mintlify.
 
 ## License
 
