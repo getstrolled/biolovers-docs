@@ -127,7 +127,8 @@
           "widgets/embed",
           "widgets/gear-shelf",
           "widgets/portfolio",
-          "widgets/steam-inventory"
+          "widgets/steam-inventory",
+          "widgets/gaming-settings"
         ]
       },
       {

@@ -1,7 +1,7 @@
 ---
 title: "Widgets overview"
-description: "Extra blocks on your profile — markdown infobox, embed, gear shelf, portfolio, Steam inventory, plus three legacy single-link types."
-keywords: ["widget", "widgets", "blocks", "extras", "extra content", "premium", "pages", "scroll", "scroll hint", "scroll pages", "scroll for more", "embed", "embeds", "iframe", "youtube widget", "discord invite widget", "telegram widget", "infobox", "markdown block", "gear", "gear shelf", "portfolio", "steam", "inventory", "steam inventory", "split profile", "sections"]
+description: "Extra blocks on your profile — markdown infobox, embed, gear shelf, portfolio, Steam inventory, gaming settings, plus three legacy single-link types."
+keywords: ["widget", "widgets", "blocks", "extras", "extra content", "premium", "pages", "scroll", "scroll hint", "scroll pages", "scroll for more", "embed", "embeds", "iframe", "youtube widget", "discord invite widget", "telegram widget", "infobox", "markdown block", "gear", "gear shelf", "portfolio", "steam", "inventory", "steam inventory", "gaming settings", "sensitivity", "mouse sens", "split profile", "sections"]
 ---
 
 <Note>
@@ -16,7 +16,7 @@ Widgets are the **extra blocks** on your profile beyond your bio and links. The 
 
 ## The widget types
 
-The `profileWidgetSchema` is a union of **eight** widget shapes. Five are first-class types you can add new instances of from the dashboard:
+The `profileWidgetSchema` is a union of **nine** widget shapes. Six are first-class types you can add new instances of from the dashboard:
 
 <CardGroup cols={2}>
   <Card title="Infobox (Markdown)" icon="file-lines" href="/widgets/markdown-infobox">
@@ -33,6 +33,9 @@ The `profileWidgetSchema` is a union of **eight** widget shapes. Five are first-
   </Card>
   <Card title="Steam inventory" icon="gamepad" href="/widgets/steam-inventory">
     Pull your CS2 / Dota 2 / TF2 inventory from Steam.
+  </Card>
+  <Card title="Gaming settings" icon="crosshairs" href="/widgets/gaming-settings">
+    Per-game mouse sens + aspect ratio. Auto-fills from your config file (CS2, COD, BF2042, OW2, R6, …).
   </Card>
 </CardGroup>
 
