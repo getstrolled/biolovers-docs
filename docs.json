@@ -143,6 +143,7 @@
         "pages": [
           "account/email",
           "account/password",
+          "account/username",
           "account/two-factor",
           "account/referrals"
         ]

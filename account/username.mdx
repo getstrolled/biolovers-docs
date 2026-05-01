@@ -1,0 +1,107 @@
+---
+title: "Username"
+description: "Change the @handle on your account. Premium accounts get one rename; capitalisation tweaks are always free."
+keywords: ["username", "rename", "change username", "change handle", "@", "handle", "case", "capital", "uppercase", "lowercase", "casing", "url", "vanity", "premium rename", "one rename", "1x", "username change"]
+---
+
+<Note>
+Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/account/signin" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/account/signin</a> — same panel as **Change password**, under the **Change username** heading.
+</Note>
+
+Your username is the `@handle` on your account and the default profile URL — `biolovers.site/<username>`. You can rename it from the dashboard, with a couple of rules.
+
+<Frame caption="Change username panel.">
+  <img src="/images/dashboard/account-username.png" alt="Change username panel" />
+</Frame>
+
+## Who can rename
+
+| Plan | What you get |
+|------|--------------|
+| **Free** | The rename input is hidden — you'll see an upgrade nudge. Capitalisation tweaks aren't available either. |
+| **Premium** | One free rename per account. After that, only an admin can change it again. Capitalisation tweaks (e.g. `yuno` → `Yuno`) are unlimited and don't count. |
+
+## How to rename
+
+1. Open the [Sign-in panel](https://dashboard.biolovers.site/dashboard/edit/account/signin).
+2. Type the new handle in the **Change username** input.
+3. Tap **Change username**.
+4. The panel confirms the new handle and your dashboard URL updates immediately.
+
+## Rules
+
+- **1–32 characters.**
+- Letters (uppercase or lowercase), digits, `_`, or `-`.
+- No spaces or emoji.
+- Cannot start or end with `_` or `-`.
+- Cannot match a reserved route (e.g. `admin`, `api`, `dashboard`, `pricing`).
+- Cannot match another account's username **or** alias — even if the casing differs. `Yuno` and `yuno` are treated as the same handle.
+
+## Capitalisation is free
+
+Changing only the case of your username — `yuno` → `Yuno`, or `MYNAME` → `MyName` — does **not** burn your one rename. The lookup the site uses is lowercase under the hood, so the casing edit just refreshes how the handle is displayed in your URL, profile header, and dashboard.
+
+You can do casing tweaks any number of times.
+
+## Identity changes burn the one rename
+
+A rename that actually moves the lookup (e.g. `yuno` → `lain`) is a true identity change. After the first one:
+
+- The form still works for capitalisation edits.
+- Trying another identity change shows **"You've already used your one username change."**.
+
+If you really need a second rename, open a ticket in our [Discord](https://biolovers.site/discord) or use the [contact form](https://biolovers.site/contact). Admins can rename you without burning your allowance.
+
+<Warning>
+Old URLs **don't redirect** after a rename. `biolovers.site/<old>` will 404 the moment you save. Tell people the new link, update bios on other platforms, and consider setting an [alias slug](/profile/domain-and-url#page-alias-premium) to the old name so both work.
+</Warning>
+
+## What renaming changes
+
+| Thing | What happens |
+|-------|--------------|
+| Profile URL | Switches to the new handle on every supported domain (`biolovers.site`, `strolled.dev`, `larp.tax`, `dominated.lol`). |
+| Old profile URL | Stops resolving immediately. No redirect. |
+| Login | Use the new handle. The old one will not log you in. |
+| Referral link | `biolovers.site/ref/<handle>` auto-syncs to the new handle. Old `/ref/<old>` 404s. |
+| Display name | Unchanged — that's a separate field in [Name & about me](/profile/name-and-about). |
+| Profile contents | Untouched — every link, badge, customisation, etc. stays exactly where it was. |
+| Email / password | Untouched. Sessions stay valid. |
+
+## Rules around frozen profiles
+
+If your profile is **frozen** by an admin, the rename input is locked. Reach out via [Discord](https://biolovers.site/discord) or the [contact form](https://biolovers.site/contact) before trying again.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why do I only get one?">
+    Renames break links other people have already shared. We allow the one move so you can fix early-account regret without people losing the ability to find each other every other week.
+  </Accordion>
+  <Accordion title="Can I take a name that's free now if I already used my rename?">
+    Not from the dashboard. Reach out via [Discord](https://biolovers.site/discord) or the [contact form](https://biolovers.site/contact) and an admin can switch it for you — admin renames don't burn your allowance.
+  </Accordion>
+  <Accordion title="What if I just want it to look better — `Yuno` instead of `yuno`?">
+    Type the new casing into the box. The site recognises that as a casing-only edit and **does not** count it as your rename. Do this any time.
+  </Accordion>
+  <Accordion title="Will my old URL redirect to the new one?">
+    No. The old URL 404s the moment you save. If keeping the old link working matters, set the [alias slug](/profile/domain-and-url#page-alias-premium) to your old handle.
+  </Accordion>
+  <Accordion title="Does it change my login?">
+    Yes — sign in with the new handle from now on. Existing sessions stay signed in.
+  </Accordion>
+  <Accordion title="Can I rename to the same name as my alias?">
+    Yes, but the alias becomes redundant — both URLs would point at the same handle. Clear the alias from the [Domain & URL panel](/profile/domain-and-url) afterwards if you don't want a duplicate.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Domain & URL" icon="link" href="/profile/domain-and-url">
+    Pick the domain, set an alias, switch visibility.
+  </Card>
+  <Card title="What Premium unlocks" icon="star" href="/premium/what-premium-unlocks">
+    Including the one-rename allowance.
+  </Card>
+</CardGroup>
