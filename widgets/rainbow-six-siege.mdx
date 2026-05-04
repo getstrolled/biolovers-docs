@@ -1,0 +1,93 @@
+---
+title: "Rainbow Six Siege on your profile"
+description: "Show ranked rank and level with a live tile, or show mouse sens and ADS with the Gaming settings widget — two supported paths."
+keywords: ["siege", "rainbow six", "r6", "rainbow six siege", "sens", "sensitivity", "GameSettings.ini", "ranked", "champion", "live tile", "gaming settings", "social integration", "ubisoft", "uplay", "psn", "xbox", "ubisoft connect", "mouse", "ads", "yaw", "pitch", "peak rank", "champion number"]
+---
+
+Biolovers supports **Rainbow Six Siege** in two different places. They do different jobs — use both if you want rank on the page *and* your sens numbers.
+
+| Goal | Use this |
+|------|----------|
+| **Rank, peak rank, Champion #, level** (what the API can return) | [Live tile](#live-tile-rainbow-six) on [Connect → Live](https://dashboard.biolovers.site/dashboard/edit/connect/live) — see [Live tiles (social integrations)](/connections/social-integrations). |
+| **Mouse sens** (yaw, pitch, per-scope ADS, DPI, aspect ratio) | [Gaming settings widget](#gaming-settings-widget) on [Widgets](https://dashboard.biolovers.site/dashboard/edit/pages/widgets) — see [Gaming settings widget](/widgets/gaming-settings). |
+
+---
+
+## Live tile: Rainbow Six
+
+**Where:** <a href="https://dashboard.biolovers.site/dashboard/edit/connect/live" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/connect/live</a>
+
+1. Open **Connect → Live**.
+2. Add **Rainbow Six** from the platform picker.
+3. Enter your **in-game name on that platform** — the same name Ubisoft / Sony / Microsoft shows for your account (not necessarily your Ubisoft Connect email).
+
+After the tile exists, use the per-tile controls on that card:
+
+| Control | What it does |
+|---------|----------------|
+| **Platform** | **PC (Ubisoft Connect)** (`uplay`), **PlayStation** (`psn`), or **Xbox** (`xbl`). Pick the platform where you play ranked. |
+| **Display rank** | **Current rank** — what you are in the active season — or **Peak (highest) rank** — best rank recorded for display. |
+
+The tile shows whatever the stats fetch returns — typically display name, current rank art + label, peak rank, Champion placement when available, and account level. Cached server-side; Rainbow Six refreshes on the same schedule as other tiles (**about 30 minutes** minimum between cache refreshes for this platform).
+
+If rank or level stay blank after you wait out a refresh cycle, re-check **platform** (PC vs PlayStation vs Xbox) and that the **name matches your profile exactly**. Still wrong? Open a ticket in our [Discord](https://biolovers.site/discord) or use our [contact form](https://biolovers.site/contact).
+
+**Sens numbers do not live on this tile** — for DPI and ADS rows, add the [gaming settings](#gaming-settings-widget) widget below.
+
+---
+
+## Gaming settings widget
+
+**Where:** <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">Widgets → + Add widget → Gaming settings</a> — full guide: [Gaming settings widget](/widgets/gaming-settings).
+
+1. Add a **Gaming settings** widget (or open an existing one).
+2. Tap **+ Add game** and choose **Rainbow Six Siege** from the catalog.
+3. Fill sens either **automatically** or **by hand**.
+
+### Config file (auto-fill)
+
+On Windows the game writes **`GameSettings.ini`**. Default pattern:
+
+`%USERPROFILE%\Documents\My Games\Rainbow Six - Siege\<folder-id>\GameSettings.ini`
+
+Replace `<folder-id>` with the **UUID-shaped folder** for your Ubisoft account (there may be several folders if you've logged multiple accounts — open each until the timestamps match your saves).
+
+- Tap **Where is my config file?** in the editor for the exact hint text.
+- **Upload** — choose `GameSettings.ini` from disk.
+- **Paste** — copy the whole file from Notepad and paste; same parser, nothing stored on free accounts except the extracted numbers.
+
+The parser reads **per-axis** yaw/pitch and **per-scope ADS** sens fields. It does **not** rely on the old combined `MouseSensitivity` line — modern Siege uses the axis and ADS keys instead.
+
+### Manual typing
+
+Open the sens table and type any row yourself — same as any other catalog game.
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Live tile shows my name but not rank or level">
+    Double-check **Platform** (PC vs PlayStation vs Xbox) and that the **identifier** is the exact name on that platform. Wait at least one refresh cycle (**about 30 minutes**) before assuming it's stuck. If it stays empty, reach us on [Discord](https://biolovers.site/discord) or the [contact form](https://biolovers.site/contact) with your platform + spelling so we can trace it.
+  </Accordion>
+  <Accordion title="Upload doesn't fill Rainbow Six sens">
+    Confirm the file is **`GameSettings.ini`** under `Rainbow Six - Siege\<your-account-folder>\`, not a launcher log or `videoconfig.txt`. Try **Paste** instead of Upload. If you're sure it's the right file, paste a snippet in [Discord](https://biolovers.site/discord) and mention Rainbow Six so we can check the parser.
+  </Accordion>
+  <Accordion title="I picked the wrong Rainbow Six folder (`<folder-id>`)">
+    Each folder under `Rainbow Six - Siege` is a different linked account. Pick the folder whose files update when you change settings in-game. If you use multiple Ubisoft accounts, each has its own folder — match folder to the account you want on the profile.
+  </Accordion>
+  <Accordion title="Do I need Premium for Siege?">
+    Same rules as any other game in Gaming settings: free tier caps how many games fit in **one** Gaming settings widget; Premium raises that cap and adds extras like storing the config file for re-parse. The **Rainbow Six live tile** uses the same free-vs-Premium rules as every other live tile (same refresh behaviour).
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Live tiles (social integrations)" icon="chart-line" href="/connections/social-integrations">
+    Platform list, identifiers, refresh behaviour.
+  </Card>
+  <Card title="Gaming settings widget" icon="crosshairs" href="/widgets/gaming-settings">
+    Upload, paste, captions, limits.
+  </Card>
+</CardGroup>
