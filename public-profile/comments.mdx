@@ -1,0 +1,86 @@
+---
+title: "Profile comments"
+description: "Visitors can leave short comments on a profile from the chat-bubble button. Logged-in only, 200 characters, once every 12 hours. The owner can turn comments off."
+keywords: ["comments", "comment", "profile comments", "guestbook", "leave a comment", "chat bubble", "message", "feedback", "wall", "shoutbox", "turn off comments", "disable comments", "delete comment", "who can comment"]
+---
+
+Visitors can leave short public comments on a profile. Comments are open to **everyone** — it isn't a Premium feature.
+
+On a public page, a floating **chat-bubble button** sits in the bottom-right corner. Tapping it opens the comments panel, which lists the existing comments (newest first) and, if you're signed in, a box to post your own.
+
+## Leave a comment
+
+<Steps>
+  <Step title="Open the comments panel">
+    On the profile, tap the **chat-bubble button** in the bottom-right corner.
+  </Step>
+  <Step title="Log in">
+    You have to be **logged in** to post. Signed-out visitors see a **"Log in to leave a comment"** link instead of the box; they can still read existing comments.
+  </Step>
+  <Step title="Write and send">
+    Type your comment (up to **200 characters** — there's a live counter) and tap **Send**. It appears at the top of the list right away.
+  </Step>
+</Steps>
+
+## The rules
+
+| Rule | Detail |
+|------|--------|
+| **Logged in** | You must be signed in to your own account to post. Reading is open to anyone. |
+| **200 characters** | That's the hard limit per comment. The counter shows how many you have left. |
+| **Once every 12 hours** | You can comment on the **same profile** at most once per 12 hours. Try again sooner and you'll see a "you can comment again in ~Xh" message. |
+
+These limits are enforced on the server, so they apply no matter what.
+
+## Turn comments off (profile owner)
+
+Comments are **on by default**. To switch them off for your own profile:
+
+1. Open the [Domain & URL panel](https://dashboard.biolovers.site/dashboard/edit/profile/url).
+2. In the **Who can see it** section, untick **Allow comments on my profile**.
+
+With comments off, the chat-bubble button disappears from your page and no one can post. Turn it back on any time from the same checkbox.
+
+<Note>
+Comments are also hidden automatically when a profile is **Hidden** (private). See [Domain & URL](/profile/domain-and-url) for the visibility modes.
+</Note>
+
+## Delete a comment
+
+A trash button shows on comments you're allowed to remove:
+
+- The **author** can delete their own comment.
+- The **profile owner** can delete any comment on their page.
+
+Deleting is immediate.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Do I need an account to comment?">
+    Yes — you have to be logged in. Anyone can read comments, but posting requires a signed-in account.
+  </Accordion>
+  <Accordion title="Why can't I post again?">
+    There's a 12-hour cooldown per profile. If you commented on this profile in the last 12 hours, wait until the timer in the panel clears.
+  </Accordion>
+  <Accordion title="Can I comment on my own profile?">
+    Yes. The 12-hour cooldown still applies.
+  </Accordion>
+  <Accordion title="I don't see the chat-bubble button on someone's page">
+    The owner turned comments off, or the profile is private. There's nothing to do on your end.
+  </Accordion>
+  <Accordion title="Someone left a comment I don't want">
+    As the profile owner you can delete any comment on your page with the trash button. To stop new ones entirely, untick **Allow comments on my profile** on the [Domain & URL panel](https://dashboard.biolovers.site/dashboard/edit/profile/url). If a comment breaks the rules, report it via the [Discord](https://biolovers.site/discord) or the [contact form](https://biolovers.site/contact).
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="What visitors see" icon="eye" href="/public-profile/anatomy">
+    A tour of the public profile.
+  </Card>
+  <Card title="Domain & URL" icon="link" href="/profile/domain-and-url">
+    Visibility modes and the comments toggle.
+  </Card>
+</CardGroup>

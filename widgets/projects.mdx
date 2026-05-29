@@ -1,0 +1,105 @@
+---
+title: "Projects widget"
+description: "Showcase the things you've built — a grid of project cards with a banner, title, description, a Visit button, and tech badges for languages and platforms. Free widget."
+keywords: ["projects", "project", "projects widget", "showcase", "dev", "developer", "github", "portfolio of work", "my work", "apps i built", "tech badges", "programming languages", "typescript", "lua", "rust", "python", "windows", "macos", "linux", "android", "ios", "web", "visit button", "side projects"]
+---
+
+<Note>
+Add from: <a href="https://dashboard.biolovers.site/dashboard/edit/pages/widgets" target="_blank" rel="noopener">Widgets → Add widget → Projects</a>
+</Note>
+
+A dev-focused showcase. In **card placement** the widget renders as a single button (default label "Projects"); tapping it opens a modal with a grid of **project cards**. Each card has a banner, a title and description, a Visit button, and a row of tech badges.
+
+This is a **free** widget — no Premium needed.
+
+## Add the widget
+
+<Steps>
+  <Step title="Open the Widgets editor">
+    Go to [Widgets](https://dashboard.biolovers.site/dashboard/edit/pages/widgets) and tap **Add widget → Projects**.
+  </Step>
+  <Step title="Add a project">
+    Tap **+ Add project**. Fill in a banner, title, description, project link, and pick tech badges (all covered below).
+  </Step>
+  <Step title="Repeat for each project">
+    Use **↑ / ↓** to reorder cards and **Remove project** to delete one. Up to **24 projects** per widget.
+  </Step>
+</Steps>
+
+The editor **autosaves** every change after a short pause — there is no Save button on this panel.
+
+## Per-project fields
+
+Each project card has:
+
+| Field | What it does |
+|-------|--------------|
+| **Banner image** | The image at the top of the card. **Upload** a file (JPEG / PNG / WebP / GIF, max **2 MB**) **or** paste an `http(s)` image URL. Tap **Replace banner** to swap it. |
+| **Title** | The project name. Required to save. Up to **120 characters**. |
+| **Description** *(optional)* | A short blurb — what it is, what you built. Up to **600 characters**. |
+| **Project link** | Where the **Visit** button sends people. Must be a valid `http(s)://` URL. Opens in a new tab. |
+| **Button text** | The label on the Visit button. Up to **40 characters**. Leave it blank and it falls back to **"Visit"**. |
+| **Tech badges** | The languages and platforms behind the project — up to **16 per card**. See below. |
+
+## Tech badges
+
+Each project can list **tech badges** — the programming languages and platforms behind it. Tap **+ Add tech badges** to open the searchable picker, grouped into **Languages** and **Platforms**.
+
+- **Languages (20):** TypeScript, JavaScript, Python, Lua, Rust, Go, C, C++, C#, Java, Kotlin, Swift, Ruby, PHP, Dart, HTML, CSS, SQL, Shell, Elixir.
+- **Platforms (6):** Windows, macOS, iOS, Android, Linux, Web.
+
+Each badge shows the technology's brand logo. **Clicking a badge opens that technology's official website** in a new tab — for example TypeScript opens typescriptlang.org, Lua opens lua.org, Windows opens microsoft.com/windows, macOS opens apple.com/macos.
+
+## Display options
+
+Two widget-level controls sit above the project list:
+
+| Control | Options |
+|---------|---------|
+| **Tech badge style** | **Icon + text** *(default)* shows the logo and the name. **Icon only** shows just the logo. |
+| **Projects per row** | **Auto (responsive)** *(default)*, or a fixed **1 / 2 / 3 / 4** per row. |
+
+## Limits
+
+- **24 projects** per Projects widget.
+- **16 tech badges** per project.
+- Title up to 120 characters; description up to 600; button text up to 40.
+- Banner upload max **2 MB** (JPEG / PNG / WebP / GIF).
+- **16 widgets** total per profile.
+
+## Tips
+
+- A **16:9 banner** fills the card cleanly — that's the shape the card crops to.
+- Lead with your strongest project; cards render in the order you set with the **↑ / ↓** arrows.
+- Pick badges that match what you actually shipped — the badges link straight to each technology's site, so visitors can follow the stack.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Is the Projects widget Premium?">
+    No. Projects is a free widget, like the gear shelf and portfolio. Everyone can add it.
+  </Accordion>
+  <Accordion title="Can I use an image hosted somewhere else for the banner?">
+    Yes — paste any `http(s)` image URL in the "or paste an image URL" field, or upload a file directly. Uploads survive forever; third-party links can break if the host removes the image.
+  </Accordion>
+  <Accordion title="What happens if I leave the button text blank?">
+    The button reads **Visit**. Set your own text (up to 40 characters) if you'd rather say "Open app", "Live demo", "View on GitHub", etc.
+  </Accordion>
+  <Accordion title="My language isn't in the badge list">
+    The catalog covers 20 languages and 6 platforms (listed above). Request another in the [Discord](https://biolovers.site/discord) — badges are added to the catalog over time.
+  </Accordion>
+  <Accordion title="Can I have more than 24 projects?">
+    Not in one widget. Add a second Projects widget if you need more — you're capped at 16 widgets total per profile.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Widgets overview" icon="grip" href="/widgets/overview">
+    Every widget type and how they render.
+  </Card>
+  <Card title="Portfolio" icon="images" href="/widgets/portfolio">
+    Image grid + video clips for visual work.
+  </Card>
+</CardGroup>

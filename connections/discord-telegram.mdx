@@ -1,7 +1,7 @@
 ---
 title: "Discord & Telegram"
 description: "Link your Discord account, show your Discord presence, add a server invite, and link a Telegram channel."
-keywords: ["discord", "discord status", "presence", "discord presence", "rich presence", "now playing", "spotify status", "what game am i playing", "server", "discord server", "guild widget", "server invite", "join my server", "telegram", "channel", "telegram channel", "telegram link", "link discord", "connect discord", "discord account", "discord bot"]
+keywords: ["discord", "discord status", "presence", "discord presence", "rich presence", "now playing", "spotify status", "what game am i playing", "server", "discord server", "guild widget", "server invite", "join my server", "telegram", "channel", "telegram channel", "telegram link", "link discord", "connect discord", "discord account", "discord bot", "google", "connect google", "link google", "sign in with google", "continue with google", "google account", "oauth"]
 ---
 
 <Note>
@@ -16,7 +16,7 @@ Two cards on the same panel — link your Discord account and configure a Telegr
 
 ## Link Discord
 
-Tap **Connect Discord**. You'll be sent to Discord's OAuth screen — we ask for **only one scope**: `identify`. That gives us your Discord ID, username, avatar, and global name.
+Tap **Connect Discord**. You'll be sent to Discord's OAuth screen — we ask for two scopes: `identify` and `email`. `identify` gives us your Discord ID, username, avatar, and global name; `email` is what lets the **Continue with Discord** button capture a verified email when you sign up. We never use it to merge two accounts — see [Sign in with Discord or Google](/getting-started/log-in#sign-in-with-discord-or-google).
 
 Once linked we use the Discord ID to:
 
@@ -51,6 +51,15 @@ The **Show Discord as a small tile** group has two checkboxes:
 - **Show my Discord as a small tile** — moves the Discord presence to the live-tile grid instead of the big panel.
 - **Show my Discord server as a small tile** — same idea for the server invite card.
 
+## Sign in with Google
+
+The same panel has a **Sign in with Google** row, right under your Discord connection. This is the dashboard side of the [Continue with Google](/getting-started/log-in#sign-in-with-discord-or-google) button — it changes how you can log in, not what shows on your public page.
+
+- Tap **Connect Google** to link your Google account. After that, you can use **Continue with Google** on the login page to sign in with one tap.
+- Once linked, the row shows **Connected** with a **Disconnect** button to unlink it.
+
+This mirrors the Discord connection: linking either provider lets you sign in with it next time. Linking Google doesn't add a Google card to your page — there isn't one.
+
 ## Telegram
 
 Below Discord, the Telegram block has:
@@ -81,6 +90,6 @@ The Biolovers Discord bot connects to Discord's gateway and listens for presence
     Edit the **Server invite link** field on the panel. Saves automatically a few seconds after you stop typing.
   </Accordion>
   <Accordion title="What scope do you actually request?">
-    Only `identify`. We do not request `email`, `guilds`, `guilds.members.read`, `guilds.join`, or any bot scopes during the user OAuth flow.
+    `identify` and `email`. `identify` powers the presence card and role grants; `email` lets a **Continue with Discord** sign-in capture a verified email. We do **not** request `guilds`, `guilds.members.read`, `guilds.join`, or any bot scopes.
   </Accordion>
 </AccordionGroup>

@@ -107,7 +107,8 @@
           "media/custom-cursor",
           "media/page-background",
           "media/splash",
-          "media/background-music"
+          "media/background-music",
+          "media/click-sounds"
         ]
       },
       {
@@ -127,6 +128,7 @@
           "widgets/embed",
           "widgets/gear-shelf",
           "widgets/portfolio",
+          "widgets/projects",
           "widgets/steam-inventory",
           "widgets/gaming-settings",
           "widgets/rainbow-six-siege"
@@ -169,6 +171,7 @@
           "public-profile/discord-presence",
           "public-profile/live-tiles",
           "public-profile/audio-player",
+          "public-profile/comments",
           "public-profile/splash-screen",
           "public-profile/mobile"
         ]
