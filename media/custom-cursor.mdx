@@ -1,7 +1,7 @@
 ---
 title: "Custom cursor"
-description: "Replace the mouse arrow with a small PNG or WebP image. Optional fading trail."
-keywords: ["cursor", "mouse", "pointer", "custom cursor", "trail", "leave trail", "cursor trail", "cursor effect", "image cursor", "remove cursor", "anime cursor", "cute cursor"]
+description: "Replace the mouse arrow with your own image, including animated cursors. Optional fading trail."
+keywords: ["cursor", "mouse", "pointer", "custom cursor", "trail", "leave trail", "cursor trail", "cursor effect", "image cursor", "remove cursor", "anime cursor", "cute cursor", "animated cursor", "gif cursor", "apng cursor", "animated webp cursor"]
 ---
 
 <Note>
@@ -17,10 +17,22 @@ Replaces the mouse arrow on your **public page** with an image of your choice. D
 ## Upload
 
 - Pick a file in the upload slot.
-- Formats: **PNG / WebP only** — GIF is **not** accepted by the cursor slot.
-- **Max image size: 128 × 128 pixels.** Anything bigger is rejected — browsers refuse to render large cursor images for performance reasons.
+- Formats: **PNG, WebP, or GIF** — including animated GIF, APNG, and animated WebP.
+- **Static cursors max 128 × 128 pixels.** Anything bigger is rejected — browsers refuse to render large static cursor images for performance reasons.
+- **Animated cursors are not bound by the 128 × 128 limit** (see below) — but keep them small (24–64 px looks best) so they don't cover what you're clicking.
 - **Max file size: 512 KB.**
-- Transparent backgrounds work great — use a PNG with alpha.
+- Transparent backgrounds work great — use a PNG or WebP with alpha.
+
+## Animated cursors
+
+Upload an **animated GIF, APNG, or animated WebP** and it plays as your cursor follows the mouse on your public page.
+
+How it works: the browser's normal cursor can only show a single still frame, so for animated files we hide the system arrow and draw your animation right where the pointer is. A few things to know:
+
+- It's **desktop-only** — phones and tablets have no pointer to follow.
+- The animation is **clamped on screen** (up to roughly 96 px wide) so an oversized file still behaves.
+- Because animated cursors skip the native cursor entirely, the **128 × 128 limit doesn't apply** to them.
+- Static PNG / WebP cursors keep using the normal, lighter browser cursor.
 
 ## Hot-spot
 
@@ -42,7 +54,7 @@ Tap **Remove** under the preview to clear the cursor and revert to the system ar
 
 <AccordionGroup>
   <Accordion title="My cursor isn't showing">
-    Check the file is **PNG or WebP**, **128 × 128 or smaller**, and under **512 KB**. Bigger files won't apply — Chrome's CSS cursor spec caps the size, and the upload slot rejects GIFs.
+    For a **static** PNG / WebP, check it's **128 × 128 or smaller** and under **512 KB** — bigger files won't apply because the browser's cursor spec caps the size. For an **animated** GIF / APNG / WebP, the size limit doesn't apply, but it's still desktop-only and capped at **512 KB**.
   </Accordion>
   <Accordion title="Why is my click slightly off?">
     The hot-spot is auto-centered, so design your cursor with the click point in the middle of the canvas. There's no per-pixel hot-spot picker.
@@ -50,8 +62,8 @@ Tap **Remove** under the preview to clear the cursor and revert to the system ar
   <Accordion title="Does the trail work on phones?">
     No — phones don't have a cursor. The trail is desktop-only.
   </Accordion>
-  <Accordion title="Can I use an animated GIF cursor?">
-    No — the cursor upload slot only accepts PNG and WebP.
+  <Accordion title="Can I use an animated cursor?">
+    Yes — upload an animated **GIF, APNG, or animated WebP**. It plays while following your mouse on your public page (desktop only). Static PNG / WebP cursors still work as a normal still cursor.
   </Accordion>
   <Accordion title="Can I tune the trail length / speed / colour?">
     Not from the dashboard — the trail is a single on / off toggle with a fixed 1.2-second fade.

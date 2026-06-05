@@ -135,6 +135,12 @@
         ]
       },
       {
+        "group": "Templates",
+        "pages": [
+          "templates/profile-templates"
+        ]
+      },
+      {
         "group": "Badges",
         "pages": [
           "badges/earned-badges",
