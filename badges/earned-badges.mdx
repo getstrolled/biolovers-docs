@@ -30,6 +30,7 @@ These are the slugs that can appear next to your name (`Profile.siteBadges`). La
 | `inviter_t2` | Inviter II | **15** successful referrals. |
 | `inviter_t3` | Inviter III | **50** successful referrals (also unlocks the Verified badge). |
 | `discord_booster` | (catalog) | Auto-synced when you **boost the Biolovers Discord server** (the bot listens for `guildMemberUpdate` / `Add` / `Remove` and toggles the badge). |
+| `discord_guild_tag` | Guild Tag | Auto-synced when your linked Discord account is **wearing the official Biolovers guild tag** (`primary_guild` matches our server and identity is enabled). |
 | Custom | (your label) | Bought slots, your own image. See [Custom badges](/badges/custom-badges). |
 
 Only the **highest donator / inviter tier** ever shows by default — bronze is replaced by silver when you cross into silver, and so on (same goes for Inviter I → II → III). You can change that per family using the modal described below.
@@ -83,6 +84,19 @@ Hover any badge to see its `description`. For custom badges this is the **Hover 
 
 Toggle **Show on profile** off for any badge — it stays earned but disappears from the public page (`siteBadgesHidden` on the profile).
 
+## Customize appearance *(Premium)*
+
+Under **Recognition** on the same Badges panel, Premium unlocks:
+
+| Control | What it does |
+|---------|--------------|
+| **Badge size on profile** | **Default**, **Smaller**, or **Bigger** for the strip next to your name. |
+| **Universal badge color** | One hex tint for every badge (including ones you earn later). Clear to restore default artwork. |
+| **Per-badge color** | Override the universal colour for a single badge. |
+| **↑ / ↓ reorder** | Change the order of the full strip (custom badges included). |
+
+Free accounts keep the catalog defaults for size, colour, and order. Hide / show still works on both tiers.
+
 ## Common questions
 
 <AccordionGroup>
@@ -94,6 +108,9 @@ Toggle **Show on profile** off for any badge — it stays earned but disappears 
   </Accordion>
   <Accordion title="Is the booster badge based on Nitro?">
     No — it's based on **boosting the Biolovers Discord server**. Linking Discord without boosting doesn't grant it.
+  </Accordion>
+  <Accordion title="How do I get the Guild Tag badge?">
+    Link Discord, then equip the official Biolovers **guild tag** on your Discord profile (identity enabled). The bot syncs the `discord_guild_tag` site badge automatically.
   </Accordion>
   <Accordion title="Can I hide a badge I earned?">
     Yes — toggle **Show on profile** off for that badge. The badge stays earned, just doesn't appear publicly.

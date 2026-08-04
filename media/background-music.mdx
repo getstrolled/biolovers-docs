@@ -1,7 +1,7 @@
 ---
 title: "Background music"
-description: "Songs that play on your page. Free gets 1 track; Premium up to 5. Real player controls: hide bar, inside-card / below-card placement, music bar panel & blur."
-keywords: ["music", "audio", "song", "playlist", "track", "volume", "sound", "mp3", "wav", "ogg", "m4a", "background music", "loop song", "autoplay music", "music wont play", "add music", "multi track", "song wont play", "music bar"]
+description: "Songs that play on your page. Free gets 1 track; Premium up to 5. Max 20 MiB per file. Or play audio from your backdrop video."
+keywords: ["music", "audio", "song", "playlist", "track", "volume", "sound", "mp3", "wav", "ogg", "m4a", "background music", "loop song", "autoplay music", "music wont play", "add music", "multi track", "song wont play", "music bar", "background video audio", "use music from background video"]
 ---
 
 <Note>
@@ -18,7 +18,7 @@ Songs that play while visitors are on your page. Free accounts get one track; Pr
 
 - Pick a file in the upload slot.
 - Formats: **MP3 (audio/mpeg) / OGG / WAV / M4A / MP4 audio**. **FLAC is not supported.**
-- **Max 8 MiB per file.**
+- **Max 20 MiB per file.**
 - Title and artist are read from the file's embedded tags. If they're missing, we show the filename.
 
 ## Slots
@@ -70,6 +70,18 @@ You can combine **Shuffle** with country rules — countries with a rule get the
 
 Free users see this whole section as a Premium upsell instead of the controls.
 
+## Use music from background video
+
+Tick **Use music from background video** to play sound from your [page background](/media/page-background) video instead of uploaded tracks.
+
+- After the splash, sound comes **only** from the backdrop video — not from uploaded tracks.
+- There is **no music bar** in this mode.
+- The video needs an audio track or the page stays silent.
+- Upload a self-hosted video under **Page background** first; until then the option warns that visitors won't hear anything.
+- Uploaded tracks stay on your account but are **not** played on the public profile while this is on.
+
+Turn the toggle off to go back to normal uploaded-track playback and the music bar controls.
+
 ## Music bar (the on-page player)
 
 After at least one track is uploaded, the **Music bar (public player)** section unlocks. The real toggles are:
@@ -115,12 +127,15 @@ Opt-in checkbox + slider, `0–50 px`. Override the panel's baked-in blur. Only 
     YouTube Audio Library, Free Music Archive, or buy a track on Bandcamp / royalty-free libraries. Don't upload songs you don't have rights to — DMCA takedowns can suspend your profile.
   </Accordion>
   <Accordion title="My MP3 won't upload">
-    Check the file is under 8 MiB and is one of MP3 / OGG / WAV / M4A. FLAC is rejected — re-encode it as 192 kbps MP3.
+    Check the file is under 20 MiB and is one of MP3 / OGG / WAV / M4A. FLAC is rejected — re-encode it as 192 kbps MP3.
   </Accordion>
   <Accordion title="Can I use a Spotify / SoundCloud link instead of uploading?">
-    Not as background music. You can show a Spotify / SoundCloud embed in a [widget](/widgets/embed) — but the embed has its own play button, not autoplay.
+    Not as background music. You can show a Spotify / SoundCloud embed in a [widget](/widgets/embed) — but the embed has its own play button, not autoplay. Or use **Use music from background video** if your backdrop video already has the audio you want.
   </Accordion>
   <Accordion title="How do I drag tracks to reorder them?">
     The dashboard uses ↑ / ↓ arrow buttons on each track row, not drag-and-drop.
+  </Accordion>
+  <Accordion title="Why is there no music bar?">
+    **Use music from background video** is on — that mode plays only the backdrop video's audio and hides the bar. Turn the toggle off to use uploaded tracks again.
   </Accordion>
 </AccordionGroup>

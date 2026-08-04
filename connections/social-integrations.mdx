@@ -1,7 +1,7 @@
 ---
 title: "Live tiles (social integrations)"
-description: "Bigger cards that show public stats from Spotify, YouTube, Twitch, GitHub, Steam, and the rest of the supported platforms."
-keywords: ["social integration", "social integrations", "integrations", "live", "live tile", "live tiles", "discord", "now playing", "spotify", "youtube", "twitch", "github", "steam", "valorant", "rainbow six", "minecraft", "instagram", "tiktok", "roblox", "weather", "live data", "linked accounts", "presets"]
+description: "Bigger cards that show public stats from Spotify, YouTube, Twitch, GitHub, Steam, CS2, FACEIT, Escape from Tarkov, and the rest of the supported platforms."
+keywords: ["social integration", "social integrations", "integrations", "live", "live tile", "live tiles", "discord", "now playing", "spotify", "youtube", "twitch", "github", "steam", "cs2", "faceit", "valorant", "rainbow six", "tarkov", "escape from tarkov", "minecraft", "instagram", "tiktok", "roblox", "weather", "live data", "linked accounts", "presets"]
 ---
 
 <Note>
@@ -20,7 +20,7 @@ Live tiles are the **bigger cards** that pull cached public data from other plat
 
 ## What's available
 
-The platform picker offers exactly these 13 tiles, plus two pseudo-tiles (Discord & Discord Server) backed by your linked Discord and configured server invite:
+The platform picker offers these live tiles, plus pseudo-tiles (Discord, Discord Server, Telegram, Telegram Group) backed by your linked Discord / Telegram settings:
 
 | Platform | What the tile shows | Identifier |
 |----------|---------------------|------------|
@@ -30,8 +30,12 @@ The platform picker offers exactly these 13 tiles, plus two pseudo-tiles (Discor
 | **Spotify** | Artist / playlist / track info: name, followers, monthly listeners, plays. | Artist, playlist, or track URL. |
 | **Twitch** | Display name, avatar, follower count, bio. (No live-stream embed — public stats only.) | Twitch username. |
 | **Steam** | Username, avatar, level, real name, profile link. | Vanity URL or numeric profile ID. |
+| **CS2 Stats** | Premier rating (current / peak) or competitive map rank via Leetify. | Steam profile URL or SteamID64. |
+| **FACEIT** | Nickname, skill level (1–10), ELO, game. | FACEIT nickname or profile URL. |
 | **Valorant** | Display name, current rank + icon, peak rank, level. | Riot ID `Name#TAG`. |
 | **Rainbow Six** | Display name, current rank, peak rank, Champion #, level. | In-game **name on platform**; set **Platform** (PC / PlayStation / Xbox) and **Display rank** (current vs peak) on the tile after you add it. [Siege guide](/widgets/rainbow-six-siege) |
+| **Escape from Tarkov** | Nickname, side, prestige, and three pickable stats (level, KD, raids, hours, …). Optional **stash** button *(Premium)*. | [tarkov.dev](https://tarkov.dev) profile URL or account ID. |
+| **Tarkov Achievements** | Selected achievement icons with rarity. | Same tarkov.dev profile URL or account ID. |
 | **Minecraft Server** | Server name, IP, online status, player count, MOTD, icon. | Server IP. |
 | **Instagram** | Display name, handle, avatar, follower count, bio. | Username. |
 | **TikTok** | Display name, handle, avatar, follower count, like count, bio. | Username without `@`. |
@@ -39,8 +43,10 @@ The platform picker offers exactly these 13 tiles, plus two pseudo-tiles (Discor
 | **Weather** | City, country, temp °C / °F, condition + icon, local time. | City name. |
 | **Discord** *(pseudo)* | Same data as the Discord card on the [Discord & Telegram](/connections/discord-telegram) panel. | Linked Discord account (auto). |
 | **Discord Server** *(pseudo)* | Same data as the server invite card. | Server invite URL. |
+| **Telegram** *(pseudo)* | Telegram profile card from your linked username. | `t.me/…` or `@name`. |
+| **Telegram Group** *(pseudo)* | Group / channel title and member count. | Group / channel `t.me/…` or `@name`. |
 
-The pseudo-Discord tiles only appear when you've linked Discord / configured a server invite **and** ticked the corresponding toggle on the Discord panel.
+The pseudo-Discord / Telegram tiles only appear when you've linked the matching account **and** ticked the corresponding toggle on the Discord & Telegram panel.
 
 ## Add an integration
 
@@ -53,8 +59,9 @@ The pseudo-Discord tiles only appear when you've linked Discord / configured a s
 
 Refresh interval is per-platform, set in the source code's `PLATFORM_TTL` map. A few examples:
 
-- **GitHub**, **Roblox** — 6 hours.
+- **GitHub**, **Roblox**, **Tarkov**, **Tarkov Achievements** — 6 hours.
 - **YouTube**, **Spotify**, **Steam**, **Twitter**, **Instagram**, **TikTok** — 1 hour.
+- **Valorant**, **Rainbow Six**, **CS2**, **FACEIT** — 30 minutes.
 - **Twitch** — 15 minutes.
 - **Minecraft / Weather** — 5 minutes.
 

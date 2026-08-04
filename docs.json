@@ -163,10 +163,17 @@
           "premium/what-premium-unlocks",
           "premium/pay-with-card",
           "premium/pay-with-crypto",
+          "premium/gift",
           "premium/verified",
           "premium/donations",
           "premium/custom-badges",
           "premium/refunds"
+        ]
+      },
+      {
+        "group": "Tools",
+        "pages": [
+          "tools/url-shortener"
         ]
       },
       {
