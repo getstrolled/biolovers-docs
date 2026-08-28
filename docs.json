@@ -87,6 +87,7 @@
         "group": "Profile",
         "pages": [
           "profile/domain-and-url",
+          "profile/custom-domain",
           "profile/name-and-about",
           "profile/stats-corner"
         ]
