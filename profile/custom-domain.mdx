@@ -47,13 +47,11 @@ Easiest: `links.yourdomain.com`. Using the main name `yourdomain.com` also works
 
     Leave TTL on Auto. Do not type quotes. Do not type `https://`. Do not leave a space in front of the target.
 
-    If Cloudflare says the target is invalid, you almost always have a `"` in the Target box. Delete it and save again.
-
-    On Cloudflare, leave the orange cloud on (Proxied).
+    **Cloudflare:** click the orange cloud so it turns **grey** (DNS only). If you leave it orange, Cloudflare shows error 1014 and the page will not load.
 
     <AccordionGroup>
       <Accordion title="Cloudflare">
-        DNS → **Add record** → **CNAME**. Name `@` for yourdomain.com, or `links` for links.yourdomain.com. Target `cname.biolovers.site`. Save.
+        DNS → **Add record** → **CNAME**. Name `@` for yourdomain.com, or `bio` for bio.yourdomain.com. Target `cname.biolovers.site`. Turn the orange cloud **off** (grey / DNS only). Save.
       </Accordion>
       <Accordion title="Namecheap">
         Domain List → **Manage** → **Advanced DNS** → **Add New Record** → **CNAME Record**. Host `@` or `links`. Value `cname.biolovers.site`. Save.
@@ -74,6 +72,7 @@ Easiest: `links.yourdomain.com`. Using the main name `yourdomain.com` also works
 ## If Check DNS still fails
 
 - Target must be exactly `cname.biolovers.site` — no quotes, no `https://`, no extra space.
+- On Cloudflare the cloud must be **grey**, not orange. Orange = error 1014.
 - If you already have an **A** record on the same name (`@` or `links`), delete that A record first. You cannot have both.
 - The dashboard also shows a **TXT** name and value. Add that only if the CNAME still does not go through.
 
@@ -95,6 +94,9 @@ Easiest: `links.yourdomain.com`. Using the main name `yourdomain.com` also works
   </Accordion>
   <Accordion title="Can I connect more than one?">
     One at a time. Remove the current one first if you want to switch.
+  </Accordion>
+  <Accordion title="Cloudflare says Error 1014">
+    The orange cloud is on. Click it so it turns grey, save, wait a minute, then open the domain again.
   </Accordion>
   <Accordion title="The browser warns that the page is not secure">
     DNS is connected but the certificate is still being made. Wait up to 15 minutes with the dashboard open. If it is still stuck, open a ticket in our [Discord](https://biolovers.site/discord) or use our [contact form](https://biolovers.site/contact).
