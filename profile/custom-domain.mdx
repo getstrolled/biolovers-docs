@@ -1,95 +1,103 @@
 ---
 title: "Use your own domain"
-description: "Premium: point a CNAME at Biolovers so your profile loads on a domain you own."
-keywords: ["custom domain", "cname", "own domain", "my domain", "vanity domain", "links.yourname.com", "dns", "alias", "aname", "apex", "cloudflare dns", "namecheap", "godaddy", "https", "ssl"]
+description: "Premium: put your page on yourdomain.com."
+keywords: ["custom domain", "own domain", "my domain", "yourdomain.com", "cname", "dns", "cloudflare", "namecheap", "godaddy"]
 ---
 
 <Note>
 Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/profile/url" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/profile/url</a>
 </Note>
 
-Premium lets you put your profile on **a domain you already own**. Visitors open `https://links.yourname.com` and land on your page — no `/username` on the end.
+With Premium you can open your page at **yourdomain.com** — just that, nothing after the slash.
 
-`biolovers.site/yourname` still works. This is an extra address, not a replacement.
+`biolovers.site/yourname` still works. This is an extra link, not a replacement.
 
 ## What you need
 
 - [Premium](/premium/what-premium-unlocks)
-- A domain you control (any registrar)
-- About five minutes for DNS to update
+- A domain you already own (we do not sell domains)
+- A few minutes
 
-A **subdomain** is the easy path: `links.yourname.com`, `me.yourname.com`, `go.yourname.com`. The bare domain (`yourname.com`) works too if your DNS host supports ALIAS / ANAME / flattened CNAME — see [Apex domains](#apex-yournamecom) below.
+Easiest: `links.yourdomain.com`. Using the main name `yourdomain.com` also works.
 
 ## Steps
 
 <Steps>
-  <Step title="Open Domain & URL">
-    Sign in and go to the [Domain & URL panel](https://dashboard.biolovers.site/dashboard/edit/profile/url). Under **Your own domain**, type the hostname (for example `links.yourname.com`) and click **Use this domain**.
+  <Step title="Type the domain in the dashboard">
+    Sign in and open [Domain & URL](https://dashboard.biolovers.site/dashboard/edit/profile/url). Under **Your own domain**, type `yourdomain.com` (or `links.yourdomain.com`) and click **Use this domain**.
   </Step>
-  <Step title="Add the CNAME">
-    The panel shows two values to copy. In your DNS host, add a **CNAME**:
+  <Step title="Add a CNAME where you bought the domain">
+    Open DNS for that domain (Cloudflare, Namecheap, GoDaddy, etc.). Add a **CNAME**. Copy **Name** and **Target** from the dashboard. Paste them as-is.
 
-    | Field | Value |
-    |-------|--------|
-    | **Name / host** | the hostname you typed (or just `links` if the zone is already `yourname.com`) |
-    | **Target / value** | `cname.biolovers.site` |
+    **yourdomain.com**
 
-    Leave TTL on automatic / 5 minutes if you have a choice. Do **not** add an A record for the same name.
+    | Field | Paste this |
+    |-------|------------|
+    | Type | CNAME |
+    | Name | `@` |
+    | Target | `cname.biolovers.site` |
+
+    **links.yourdomain.com**
+
+    | Field | Paste this |
+    |-------|------------|
+    | Type | CNAME |
+    | Name | `links` |
+    | Target | `cname.biolovers.site` |
+
+    Leave TTL on Auto. Do not type quotes. Do not type `https://`. Do not leave a space in front of the target.
+
+    If Cloudflare says the target is invalid, you almost always have a `"` in the Target box. Delete it and save again.
+
+    On Cloudflare, leave the orange cloud on (Proxied).
 
     <AccordionGroup>
-      <Accordion title="Cloudflare DNS">
-        DNS → **Add record** → type **CNAME**. Name `links` (or `@` only if you are using CNAME flattening on the apex). Target `cname.biolovers.site`. Proxy status can stay **Proxied**. Save.
+      <Accordion title="Cloudflare">
+        DNS → **Add record** → **CNAME**. Name `@` for yourdomain.com, or `links` for links.yourdomain.com. Target `cname.biolovers.site`. Save.
       </Accordion>
       <Accordion title="Namecheap">
-        Domain List → **Manage** → **Advanced DNS** → **Add New Record**. Type **CNAME Record**. Host `links`. Value `cname.biolovers.site.` (the trailing dot is fine). Save.
+        Domain List → **Manage** → **Advanced DNS** → **Add New Record** → **CNAME Record**. Host `@` or `links`. Value `cname.biolovers.site`. Save.
       </Accordion>
       <Accordion title="GoDaddy">
-        DNS → **Add** → **CNAME**. Name `links`. Value `cname.biolovers.site`. Save.
+        DNS → **Add** → **CNAME**. Name `@` or `links`. Value `cname.biolovers.site`. Save.
       </Accordion>
     </AccordionGroup>
   </Step>
   <Step title="Check DNS">
-    Back on the dashboard, click **Check DNS**. If the record is not visible yet, wait a minute and click again. Most registrars update in under five minutes; a few take longer.
+    Back on the dashboard, click **Check DNS**. If it is not ready, wait a minute and click again. Usually under five minutes.
   </Step>
-  <Step title="Wait for HTTPS">
-    After DNS is found, HTTPS usually finishes on its own within a few minutes. The panel says **Live** and links your new address when it is ready. Keep the tab open — it refreshes by itself.
+  <Step title="Wait for the lock icon">
+    After DNS is found, the secure padlock in the browser can take a few more minutes. The panel says **Live** when it is ready. Leave the tab open — it refreshes by itself.
   </Step>
 </Steps>
 
-## Apex (`yourname.com`)
+## If Check DNS still fails
 
-A plain CNAME is not allowed on the zone apex at many registrars. Use one of these instead of (or as well as) the CNAME:
-
-- **Cloudflare:** CNAME on `@` with flattening (orange cloud).
-- **Namecheap / others:** an **ALIAS** or **ANAME** record pointing at `cname.biolovers.site`.
-- Or skip the apex and use `www.yourname.com` / `links.yourname.com`.
-
-The dashboard also shows a **TXT** record (`_biolovers-challenge…`). Add it if Check DNS cannot see a CNAME — that proves you own the name when the registrar flattens records.
+- Target must be exactly `cname.biolovers.site` — no quotes, no `https://`, no extra space.
+- If you already have an **A** record on the same name (`@` or `links`), delete that A record first. You cannot have both.
+- The dashboard also shows a **TXT** name and value. Add that only if the CNAME still does not go through.
 
 ## After it is live
 
-- Share `https://your.domain/` — that is the whole URL.
-- `https://your.domain/yourname` redirects to `/`.
-- Comments still post on `biolovers.site` (you have to be signed in there). Reading comments on your custom domain still works.
-- Change or remove the domain any time from the same panel. The old address stops working as soon as you remove it.
+- Share `https://yourdomain.com/` — that is the whole link.
+- Opening `https://yourdomain.com/yourname` sends people to `/`.
+- Comments still need you signed in on biolovers.site. Reading comments on yourdomain.com still works.
+- Change or remove the domain any time in the same panel.
 
 ## Common questions
 
 <AccordionGroup>
   <Accordion title="Can I use strolled.dev?">
-    No. That name is not offered as a profile domain anymore. Use **biolovers.site**, one of the other Premium first-party names (`larp.tax`, `dominated.lol`, `lyrisch.bio`, `vouched.lol`), or a domain you own.
+    No. Use **biolovers.site**, one of the other names (`larp.tax`, `dominated.lol`, `lyrisch.bio`, `vouched.lol`), or yourdomain.com.
   </Accordion>
-  <Accordion title="Do I need to buy a new domain from Biolovers?">
-    No. Use whatever you already registered. We never sell domains.
+  <Accordion title="Do I need to buy a domain from Biolovers?">
+    No. Use whatever you already registered.
   </Accordion>
-  <Accordion title="Can I connect more than one custom domain?">
+  <Accordion title="Can I connect more than one?">
     One at a time. Remove the current one first if you want to switch.
   </Accordion>
-  <Accordion title="Check DNS keeps failing">
-    Confirm the CNAME **target** is exactly `cname.biolovers.site` (no `https://`). Wait a few minutes. If you used the apex, add the TXT record from the panel as well. A leftover A record on the same name will block the CNAME — delete it.
-  </Accordion>
-  <Accordion title="The page is HTTP-only / browser warns about HTTPS">
-    DNS is connected but the certificate is still issuing. Wait up to 15 minutes with the dashboard open. If it is still stuck, open a ticket in our [Discord](https://biolovers.site/discord) or use our [contact form](https://biolovers.site/contact).
+  <Accordion title="The browser warns that the page is not secure">
+    DNS is connected but the certificate is still being made. Wait up to 15 minutes with the dashboard open. If it is still stuck, open a ticket in our [Discord](https://biolovers.site/discord) or use our [contact form](https://biolovers.site/contact).
   </Accordion>
 </AccordionGroup>
 
@@ -100,6 +108,6 @@ The dashboard also shows a **TXT** record (`_biolovers-challenge…`). Add it if
     First-party domains, alias, watermark, who can see the page.
   </Card>
   <Card title="What Premium unlocks" icon="star" href="/premium/what-premium-unlocks">
-    Custom domain, alias, watermark off, and the rest of the list.
+    Your own domain, alias, watermark off, and the rest of the list.
   </Card>
 </CardGroup>
