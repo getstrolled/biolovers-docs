@@ -1,113 +1,72 @@
 ---
-title: "Reading your stats (the Overview tab)"
-description: "The first page you see in the dashboard. Profile views, visitors, link clicks, top countries, top links, and what each chart actually counts."
-keywords: ["stats", "analytics", "views", "visitors", "clicks", "overview", "home", "summary", "dashboard home", "dashboard", "share", "share link", "public link", "qr", "qr code", "how many views", "where are my views", "see who visited", "what country", "top links"]
+title: "Overview and your stats"
+description: "Find your profile studio, share your page, and read its traffic and link activity."
+keywords: ["overview", "dashboard home", "profile studio", "style", "music", "stats", "analytics", "views", "clicks", "share", "qr code"]
 ---
 
-<Note>
-Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit</a> — the Overview tab is what loads first when you sign in.
-</Note>
+[Overview](https://dashboard.biolovers.site/dashboard/edit) is the starting point for editing and sharing your profile.
 
-The Overview tab tells you how your page is doing.
+## Your profile studio
 
-<Frame caption="The Overview tab.">
-  <img src="/images/dashboard/overview-stats.png" alt="Overview tab with stats and charts" />
+Choose **Style → Edit style** for the [Profile style panel](https://dashboard.biolovers.site/dashboard/edit/look/card-layout), or **Music → Edit music** for [Music & lyrics](https://dashboard.biolovers.site/dashboard/edit/media/audio). These are the main editing shortcuts above your traffic charts.
+
+<Frame caption="Overview puts Style, Music, and the first setup steps together.">
+  <img src="/images/dashboard/profile-studio-overview.jpg" alt="Dashboard overview with large Style and Music shortcuts and guided setup" />
 </Frame>
 
-## The header bar
+Other shortcuts open **Name & bio**, **Profile photo**, **Add links**, and **Templates**. Use **Guided setup** if you want to work through the first steps in order.
 
-| Thing | What it is |
-|-------|------------|
-| **Welcome back / display name** | Just hello text. |
-| **Premium badge** | Shown if your account has Premium. |
-| **Public link box** | Your full profile URL — tap **Copy** to put it on the clipboard, or **Open** to view your public page in a new tab. |
-| **QR button** | Drops down a QR code to your page so you can let someone scan it on their phone. |
+## Find a setting in the sidebar
 
-## The five small tiles
+| Section | What to open |
+| --- | --- |
+| **Your details** | Your URL, name and bio, location, and stats. |
+| **Style** | **Profile style** for headers, avatar frames, links, status, backdrops, and advanced card controls; also fonts, text effects, and the browser tab. |
+| **Music & images** | **Music & lyrics** first, followed by your profile photo, custom cursor, background, and intro screen. |
+| **Links & accounts** | **Your links**, **Connected cards**, **Discord & Telegram**, and **Tips & wallets**. |
+| **Templates** | Free starter looks, saved profiles, and the marketplace. |
 
-| Tile | What it shows |
-|------|---------------|
-| **Username** | The `@username` you signed up with. |
-| **Aliases** | Your alias slug (`/aka`) if you set one, or "No aliases". See [Domain & URL](/profile/domain-and-url). |
-| **UID** | Your numeric account ID. Never changes. |
-| **Profile views** | All-time view count — one per visitor IP per UTC month. |
-| **Clicks (range)** | Total taps on social links + project cards in the time range you picked below. |
+Inside **Music & lyrics**, use **Tracks & lyrics**, **Player style**, or **Playback rules**. Inside **Profile style**, use **Header & avatar**, **Links**, **Status**, or **Backdrop**. Open **Card shape & advanced layout** for the older sizing and panel controls.
 
-## Range and metric switches
+See [Profile design](/appearance/profile-design), [Background music](/media/background-music), or [Lyrics and LRC files](/media/lyrics) for the full steps.
 
-Two pill rows control what the charts show:
+## Share and preview
 
-- **Range:** `24h` / `7d` / `30d` / `All`. The whole tab re-fetches when you change this.
-- **Metric:** `Views` / `Visitors` / `Clicks`. Only the **Traffic** chart switches.
+Your profile header shows its public URL and these actions:
 
-**Views vs Visitors:** views count every page load that wasn't deduped; visitors count distinct fingerprints in the range. Reloading your own page in the same UTC month from the same IP only counts once towards views.
+- **Copy link** copies the URL.
+- **Share** opens your device's sharing options where available.
+- **Open profile** opens the public page.
+- The **QR code** button lets someone scan your link.
 
-## Traffic chart
+Use the dashboard's **Preview** button while editing to inspect the saved profile without adding public view or click activity. It starts in **Phone** view at **390 px**; switch to Desktop to check a wider layout. On wide desktop windows, the editor and preview sit side by side so you can keep editing.
 
-Line + area chart of the metric you picked, broken into:
+The preview updates after your changes save. It shows the actual music-player layout and selected lyric style with playback controls disabled. **Sound is off in preview. Open your public page to test playback.** Opening the public URL is a normal profile visit.
 
-- **24h range** — one point per hour (UTC).
-- **Other ranges** — one point per day (UTC).
+## Next steps and profile health
 
-Hover a dot to see the exact number for that bucket.
+The next-step and health cards point to unfinished setup or settings that need attention. For example, add an email for account recovery or review a connected card that could not refresh. Follow the action shown on the card.
 
-## Visitor devices donut
+## Traffic & insights
 
-Pie of `Desktop / Mobile / Tablet / Unknown` based on the user-agent. Filled in once you have at least one tracked view in the range.
+Expand **Traffic & insights** to see your charts. It may stay collapsed when your page has little activity.
 
-## Top countries
+| Summary | Meaning |
+| --- | --- |
+| **Lifetime views** | Your profile's all-time view total. |
+| **Profile views** | Views in the selected range. |
+| **Total clicks** | Click activity in the selected range. |
 
-Bar chart of country codes (`US`, `DE`, `BR`, …) in the chosen range. Country comes from the visitor's IP — VPN users may show as a different country.
+Choose **24h**, **7d**, **30d**, or **All**, then switch the Traffic chart between **Views**, **Visitors**, and **Clicks**. Hover a point for its value.
 
-## Top clicked links
+Below the chart, review visitor devices, top countries, and your most-clicked links, projects, and connected cards. Looking at a card is different from following its link.
 
-The top 10 social link chips visitors tapped, with the URL underneath each label.
+<Note>
+These are aggregate stats. They do not show a list of visitors' names. A lifetime total and a chart with a selected date range may differ because they cover different periods.
+</Note>
 
-## Top clicked projects
+## If a chart looks empty
 
-Same idea, but for **project / portfolio cards** inside your widgets.
+Try a longer range and check that you have shared the correct public link. Newly created pages can have little activity. Your saved editor preview does not add traffic.
 
-## Top clicked integrations
-
-Taps on the **View Profile / Listen / Join** buttons of your live tiles (GitHub card, Spotify card, Steam card, Discord card, server invite).
-
-## How counting actually works
-
-The exact rules, straight from the API:
-
-- **Views** are deduped **once per IP per UTC month** for the all-time `Profile views` tile, and **once per IP per UTC day** for the day-bucketed traffic chart. Reload your page from the same IP in the same window — only the first tap counts.
-- **Owner visits do count.** Browsing your own page from the dashboard tab still increments the view counter — there's no owner filter on the view endpoint. If you want a clean number, use a private window with a different IP / VPN.
-- **Bots are filtered out.** Requests that look like crawlers (Discord card preview, Twitter card, Google bot, etc.) are detected by user-agent and **not** counted.
-- **Clicks are not deduped.** Every tap on a social link / project / integration tile is recorded, including repeated taps from the same visitor. Counting shows raw taps.
-- **Numbers refresh on the next view.** They aren't real-time to the second.
-
-## Common questions
-
-<AccordionGroup>
-  <Accordion title="Can I see who visited me by name?">
-    No. We don't log identities. Only aggregate numbers + country + device.
-  </Accordion>
-  <Accordion title="Why does the chart say 'No traffic in this range yet'?">
-    Either your link hasn't been shared yet, or all the visits happened before the range you picked. Try **All** to see everything.
-  </Accordion>
-  <Accordion title="The clicks count says 0 but I tested it">
-    Click tracking does not dedupe — each tap records. If you genuinely see 0, the page may have been served as a bot (uncommon for a manual click) or the link is being opened with a middle-click that the page didn't see.
-  </Accordion>
-  <Accordion title="What's a 'click' on an integration?">
-    Tapping the call-to-action on a live tile (View Profile, Listen on Spotify, Watch on YouTube, Join Server, etc.). Just looking at the card is **not** a click.
-  </Accordion>
-  <Accordion title="My own visits inflate my numbers">
-    They do. Use a private window with a different IP / VPN to view your page without counting.
-  </Accordion>
-</AccordionGroup>
-
-## Related
-
-<CardGroup cols={2}>
-  <Card title="Make people share your link" icon="share" href="/profile/domain-and-url">
-    Pick a memorable URL and an alias.
-  </Card>
-  <Card title="Add live tiles" icon="bolt" href="/connections/social-integrations">
-    Spotify, YouTube, Twitch, Steam, GitHub.
-  </Card>
-</CardGroup>
+For profile URL help, see [Domain & URL](/profile/domain-and-url). To add places visitors can click, see [Your links](/connections/social-links).

@@ -1,141 +1,103 @@
 ---
 title: "Background music"
-description: "Songs that play on your page. Free gets 1 track; Premium up to 5. Max 20 MiB per file. Or play audio from your backdrop video."
-keywords: ["music", "audio", "song", "playlist", "track", "volume", "sound", "mp3", "wav", "ogg", "m4a", "background music", "loop song", "autoplay music", "music wont play", "add music", "multi track", "song wont play", "music bar", "background video audio", "use music from background video"]
+description: "Upload profile music, edit artwork, choose a player placement, and add Premium lyrics. Free has one track; Premium has up to five."
+keywords: ["music", "audio", "song", "playlist", "volume", "mp3", "wav", "ogg", "m4a", "background music", "music card", "album art", "lyrics", "player placement", "background video audio"]
 ---
 
-<Note>
-Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/media/audio" target="_blank" rel="noopener">dashboard.biolovers.site/dashboard/edit/media/audio</a>
-</Note>
+Open [Music & images → Music & lyrics](https://dashboard.biolovers.site/dashboard/edit/media/audio) to add songs and choose how the player looks. Free accounts can use **one track**; Premium can use **up to five**.
 
-Songs that play while visitors are on your page. Free accounts get one track; Premium up to five.
+| Music tab | What to change |
+| --- | --- |
+| **Tracks & lyrics** | Uploaded songs, artwork, lyrics, and each track's starting point. |
+| **Player style** | Placement, player surface, blur, and the player preview. |
+| **Playback rules** | Premium shuffle and country-based starting tracks. |
 
-<Frame caption="Background music panel with three tracks loaded — each row has ↑ / ↓ to reorder, a Start-at offset, and Remove.">
-  <img src="/images/dashboard/audio-tracks-list.png" alt="Background music panel with three tracks loaded" />
+## Add and edit a track
+
+1. Open **Tracks & lyrics** in the [Music panel](https://dashboard.biolovers.site/dashboard/edit/media/audio).
+2. Pick a file: **MP3, OGG, WAV, M4A, or MP4 audio**, up to **20 MiB**. FLAC is not supported.
+3. Expand the track's settings. Check or edit its song name, artist, and album.
+4. Use **Add album cover** or **Change cover** to choose artwork. Use **Remove cover** to clear it.
+5. Open your saved preview to check the result.
+
+The player uses the file's tags when available. Clear an editable tag if you want to hide it.
+
+## Preview the player
+
+In [Music & lyrics](https://dashboard.biolovers.site/dashboard/edit/media/audio), choose **Preview player on profile** to open the saved profile at the player. The preview starts at **Phone** width, **390 px**, and shows your actual player placement, artwork, and lyric style. It stays updated after changes save. On wide desktop windows, the editor remains beside the preview.
+
+Playback controls are disabled there: **Sound is off in preview. Open your public page to test playback.** Use the public page to check audio, seeking, and synchronized lyrics.
+
+Opening a track's details selects that song for preview. You can also use **Preview song** under **Player style** to inspect another track's artwork and lyrics. This only changes the preview; it does not reorder your playlist or change the song visitors hear first.
+
+<Frame caption="Player style keeps your placement choices beside the saved profile preview on desktop.">
+  <img src="/images/dashboard/music-player-editor.jpg" alt="Music editor with Player style selected and the actual artwork player and lyrics in the profile preview" />
 </Frame>
 
-## Add a track
+## Player placement
 
-- Pick a file in the upload slot.
-- Formats: **MP3 (audio/mpeg) / OGG / WAV / M4A / MP4 audio**. **FLAC is not supported.**
-- **Max 20 MiB per file.**
-- Title and artist are read from the file's embedded tags. If they're missing, we show the filename.
+Open **Player style** on the [Music panel](https://dashboard.biolovers.site/dashboard/edit/media/audio), then choose **Player placement**:
 
-## Slots
+| Placement | Appearance |
+| --- | --- |
+| **Bottom of screen** | A compact bar pinned to the visitor's screen. This is the default. |
+| **Inside profile frame** | A larger music card inside your profile, with artwork, song details, and controls. |
+| **Below profile frame** | The same artwork card beneath your profile with a small gap. |
 
-| Tier | Tracks |
-|------|--------|
-| **Free** | 1 track. |
-| **Premium** | Up to **5 tracks**, with skip controls on the player. |
+These placements are available on Free and Premium. When [lyrics](/media/lyrics) are enabled on Premium, they appear below the controls. Hiding lyrics also removes their extra space.
 
-## Reorder tracks (the ↑ / ↓ arrows)
+<Tabs>
+  <Tab title="Inside profile frame">
+    <Frame caption="Example profile with an artwork music card inside the profile frame and Glass lyrics below its controls.">
+      <img src="/images/profile/music-inside-frame.jpg" alt="Music card inside a centered example profile" />
+    </Frame>
+  </Tab>
+  <Tab title="Below profile frame">
+    <Frame caption="The artwork card beneath the profile frame.">
+      <img src="/images/profile/music-below-frame.jpg" alt="Music card placed below an example profile" />
+    </Frame>
+  </Tab>
+  <Tab title="Bottom of screen">
+    <Frame caption="The compact bottom bar with lyrics beneath its song controls.">
+      <img src="/images/profile/music-bottom-bar.jpg" alt="A compact audio bar at the bottom of an example profile" />
+    </Frame>
+  </Tab>
+</Tabs>
 
-Each track row has **↑** and **↓** buttons next to **Remove**. Tap them to move that track up or down in the list. **There is no drag-and-drop** — use the arrows. Track 1 (top) is the default starting song; the player walks down the list from there.
+**Hide bar (playback continues)** hides the player. Visitors' remembered pause or mute choices, or blocked playback, can expose controls so they can restore sound.
 
-In the screenshot above the third row's **↑** is enabled and the first row's **↑** is disabled (greyed out) because it's already at the top — same for the last row's **↓**.
+## Player surface
 
-## Per-track start offset
+In **Player style**, choose **Site default**, **Solid**, **Glass**, or **Transparent** under **Music bar panel**. Site default matches the profile card; an explicit choice gives the music player its own surface.
 
-Each row has a **Start at** field (`mm:ss` or seconds, e.g. `0:30`, `45`). Leave empty to start from the beginning. Useful for skipping intros.
+These surface choices are free. **Custom backdrop blur**, from **0 to 50 px**, requires Premium. The separate **Transparent card panel** in [Layout](/appearance/card-layout) is also Premium.
 
-## Shuffle (Premium)
+## Lyrics (Premium)
 
-When you have **at least two tracks** and you're on Premium, the **First track (visitor)** section unlocks. Tick **Shuffle tracks (random first track and order)** to randomise the starting track on every visit *and* shuffle the rest of the queue:
+Each uploaded track has its own **Show lyrics** switch, **Upload .lrc** button, style picker, and timing adjustment when timed lyrics are available. Use embedded lyrics or import a matching timed LRC without uploading the audio again.
 
-<Frame caption="Shuffle on — every visitor gets a random starting track and a re-shuffled queue.">
-  <img src="/images/dashboard/audio-shuffle-on.png" alt="Shuffle tracks checkbox enabled in the audio panel" />
-</Frame>
+See [Lyrics and LRC files](/media/lyrics) for **Glass / Karaoke / Minimal**, where to find LRC files, line-versus-word timing, and fixing early or late text.
 
-The shuffle re-picks on the client after hydration, so CDN caching never locks visitors into the same "random" track.
+## Playlist order and starting point
 
-## Country rules — pick a starting track per country (Premium)
+In **Tracks & lyrics** on the [Music panel](https://dashboard.biolovers.site/dashboard/edit/media/audio):
 
-Click **Add country rule** to add a row. Each rule is **Country** (dropdown of every ISO country) + **Play first** (which track number plays first for visitors from that country). Visitors from a listed country always hear that track first; everyone else falls back to shuffle (if on) or Track 1.
+- Use the **↑ / ↓** buttons on each track row to reorder it. Use **Remove** to delete it.
+- Set **Start at** to seconds or mm:ss, such as **45** or **0:30**, to skip an intro. Leave it empty to start from the beginning.
 
-<Frame caption="One country rule: visitors from the United States hear Track 2 first.">
-  <img src="/images/dashboard/audio-country-rule-one.png" alt="One country rule mapping United States to Track 2" />
-</Frame>
+In **Playback rules**:
 
-Add as many rules as you want — each country can only be used once (already-mapped countries disappear from the dropdown for the other rows). Hit **Remove** on a row to delete it.
+- With two or more Premium tracks, turn on **Shuffle tracks (random first track and order)** to shuffle the starting song and queue.
+- Use **Add country rule** to choose a starting track for a country. A country rule takes priority; other visitors use shuffle or the first track.
 
-<Frame caption="Two country rules: Germany → Track 3, United States → Track 2.">
-  <img src="/images/dashboard/audio-country-rule-two.png" alt="Two country rules: Germany to Track 3, United States to Track 2" />
-</Frame>
+## Sound from a background video
 
-You can combine **Shuffle** with country rules — countries with a rule get their assigned track first, *everyone else* gets the random shuffle:
+After uploading a video in [Music & images → Background](https://dashboard.biolovers.site/dashboard/edit/media/background), enable **Use music from background video** on the [Music panel](https://dashboard.biolovers.site/dashboard/edit/media/audio).
 
-<Frame caption="Shuffle + country rules together. Mapped countries get a fixed first track; everyone else is shuffled.">
-  <img src="/images/dashboard/audio-shuffle-and-country.png" alt="Shuffle on plus two country rules" />
-</Frame>
+The player controls that video's audio instead of uploaded songs. The video needs an audio track. Uploaded songs stay saved and resume when you turn this option off. Lyrics from uploaded tracks are not shown in this mode.
 
-Free users see this whole section as a Premium upsell instead of the controls.
+## Playback and visitor preferences
 
-## Use music from background video
+Browsers can require a tap before music plays. A [splash screen](/media/splash) provides that interaction. Visitors can pause, mute, or change the volume; those choices are remembered in their browser. A remembered pause or mute should be checked before treating silence as a problem.
 
-Tick **Use music from background video** to play sound from your [page background](/media/page-background) video instead of uploaded tracks.
-
-- After the splash, sound comes **only** from the backdrop video — not from uploaded tracks.
-- There is **no music bar** in this mode.
-- The video needs an audio track or the page stays silent.
-- Upload a self-hosted video under **Page background** first; until then the option warns that visitors won't hear anything.
-- Uploaded tracks stay on your account but are **not** played on the public profile while this is on.
-
-Turn the toggle off to go back to normal uploaded-track playback and the music bar controls.
-
-## Music bar (the on-page player)
-
-After at least one track is uploaded, the **Music bar (public player)** section unlocks. The real toggles are:
-
-| Toggle | What it does |
-|--------|--------------|
-| **Hide bar (audio still plays)** | The bar is invisible to visitors but the song still plays. |
-| **Inside profile card** | Music bar lives inside the card frame instead of at the bottom of the page. Mutually exclusive with **Below card**. |
-| **Below card (separate strip, spaced)** | A separate strip beneath the card, with a small gap. Mutually exclusive with **Inside profile card**. |
-
-Default (both off) is a **full-width bar at the bottom of the page**.
-
-There are **no** dashboard toggles for **autoplay**, **loop**, **shuffle** (free), or **default volume** — playback is autoplay-on-tap, looping, in upload order, with the visitor controlling the volume from the player itself. The "music starts after the splash" behaviour is automatic when [Splash](/media/splash) is enabled.
-
-## Music bar panel (the bar's chrome)
-
-Below the placement toggles, **Music bar panel** picks the fill behind the controls:
-
-| Option | What it does |
-|--------|--------------|
-| **Site default** | Match the profile card panel — bar reuses the same glass and tint. |
-| **Solid** | Fully opaque dark panel. |
-| **Glass** | Frosted, semi-transparent. |
-| **Transparent** | No panel fill — the controls float on the page background. **Premium-only.** |
-
-## Music bar blur (Premium)
-
-Opt-in checkbox + slider, `0–50 px`. Override the panel's baked-in blur. Only visible on glass / transparent music bar panels.
-
-## Tips
-
-- Pair a splash screen with music. The visitor's tap on the splash counts as the interaction browsers need to allow audio.
-- Loud tracks sound *much* louder than the visitor expects. Normalize your tracks before upload.
-- For Premium playlists, group songs by mood — there's no per-track crossfade.
-
-## Common questions
-
-<AccordionGroup>
-  <Accordion title="Music doesn't autoplay">
-    See the dedicated page: [Audio won't autoplay](/troubleshooting/audio-autoplay). Adding a [splash](/media/splash) is the most reliable fix.
-  </Accordion>
-  <Accordion title="Where do I get free, legal music?">
-    YouTube Audio Library, Free Music Archive, or buy a track on Bandcamp / royalty-free libraries. Don't upload songs you don't have rights to — DMCA takedowns can suspend your profile.
-  </Accordion>
-  <Accordion title="My MP3 won't upload">
-    Check the file is under 20 MiB and is one of MP3 / OGG / WAV / M4A. FLAC is rejected — re-encode it as 192 kbps MP3.
-  </Accordion>
-  <Accordion title="Can I use a Spotify / SoundCloud link instead of uploading?">
-    Not as background music. You can show a Spotify / SoundCloud embed in a [widget](/widgets/embed) — but the embed has its own play button, not autoplay. Or use **Use music from background video** if your backdrop video already has the audio you want.
-  </Accordion>
-  <Accordion title="How do I drag tracks to reorder them?">
-    The dashboard uses ↑ / ↓ arrow buttons on each track row, not drag-and-drop.
-  </Accordion>
-  <Accordion title="Why is there no music bar?">
-    **Use music from background video** is on — that mode plays only the backdrop video's audio and hides the bar. Turn the toggle off to use uploaded tracks again.
-  </Accordion>
-</AccordionGroup>
+See [Audio player](/public-profile/audio-player) for visitor controls and [Audio won't autoplay](/troubleshooting/audio-autoplay) if playback is blocked.

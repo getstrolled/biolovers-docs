@@ -1,54 +1,53 @@
 ---
 title: "Audio player (visitor view)"
-description: "What the on-page audio bar looks like to visitors and how to control it."
-keywords: ["audio player", "music bar", "play button", "skip button", "volume", "mute", "audio controls", "now playing bar", "music wont start", "music stuck", "attached audio", "hidden audio bar"]
+description: "Music cards, the bottom bar, playback controls, and lyrics on a public profile."
+keywords: ["audio player", "music card", "bottom bar", "play", "pause", "seek", "volume", "mute", "lyrics", "album cover", "music controls"]
 ---
 
-When your profile has [background music](/media/background-music) on, an audio bar appears on the page so visitors can play / pause / skip / mute.
+Profiles with [background music](/media/background-music) can show a player inside the profile, below it, or at the bottom of the screen. The owner chooses its placement in [Music → Player style](https://dashboard.biolovers.site/dashboard/edit/media/audio).
+
+## Artwork cards and the bottom bar
+
+**Inside profile frame** and **Below profile frame** use a rounded music card with larger album artwork, song details, and controls. **Bottom of screen** keeps the compact bar pinned to the screen. On small screens, controls and the seek row wrap to fit.
+
+<Frame caption="Example artwork music card beneath a profile. Lyrics stay below its controls.">
+  <img src="/images/profile/music-below-frame.jpg" alt="Music card beneath the profile with album artwork, song details, playback controls, and lyrics" />
+</Frame>
 
 ## Controls
 
-| Button | What it does |
-|--------|--------------|
-| **Play / Pause** | Start or stop the current track. |
-| **Next** | Next track. **Only shown when the playlist has 2+ tracks.** Single-track profiles have no next button. |
-| **Previous** | Previous track (in shuffle, replays the last picked track). **Only shown when the playlist has 2+ tracks.** |
-| **Volume slider** | 0–100%. Visitor's choice persists for the rest of their visit. |
-| **Mute** | Quick mute toggle on the speaker icon. |
-| **Track title + cover** | Always visible — shows the current track's title, artist, and album art when set on the [Audio panel](/media/background-music). |
+| Control | What it does |
+| --- | --- |
+| **Play / Pause** | Start or stop the current song. |
+| **Previous / Next** | Change tracks when the profile has more than one. |
+| **Seek bar** | Move to another point in the song. Keyboard controls are supported. |
+| **Volume** | Change playback volume. |
+| **Mute** | Silence or restore sound. |
+| **Lyrics** | Hide or show the lyric panel when the owner enabled lyrics for that track. |
 
-There is **no auto-hide / fade-out** behavior — the bar stays visible while playback is active. The only way to hide the UI is to enable **Hidden** on the music bar settings (playback continues, the controls disappear).
+Pause, mute, and volume choices are remembered in the visitor's browser. A paused song stays paused on a later visit until the visitor chooses Play.
 
-## Position / chrome
+## Lyrics
 
-You set the bar's placement on the [Audio panel](/media/background-music). Real options:
+Premium owners can enable **Glass**, **Karaoke**, or **Minimal** lyrics. The words stay below the controls in every placement.
 
-- **Viewport-fixed bottom** *(default)* — pinned to the bottom of the visitor's screen.
-- **Attached** — docked inside the profile card.
-- **Below profile** — sits in the column below the card with a gap.
-- **Hidden** — UI hidden, playback continues.
+- Line timestamps follow a line at a time.
+- Supplied word or syllable timestamps allow more precise highlights.
+- Plain embedded lyrics display readable text without syncing.
+- Before the first timestamp, upcoming text is dimmed.
 
-Plus the **panel style** for the bar's chrome: site default (matches card) / solid / glass / transparent. **Custom blur (0–50 px)** is Premium-only.
+Changing style does not create missing word timing. See [Lyrics and LRC files](/media/lyrics) to add or correct lyrics.
 
-There is no left / center / right / floating-mini selector — the bar is always full-width inside its placement zone.
+## Hidden player and video audio
 
-### Side-by-side: the four placements
+An owner can choose **Hide bar (playback continues)**. If playback is blocked or a visitor has a remembered pause or mute, controls can appear so they can restore sound.
 
-The showcase profile with one short MP3 loaded, screenshotted from each placement option.
+When the owner uses audio from the page's background video, the controls operate that video audio. Uploaded-track lyrics and playlist controls do not apply to that source.
 
-<Frame caption="Viewport-fixed bottom (default) — bar pinned to the bottom of the screen, full window width.">
-  <img src="/images/comparisons/audio-bar/fixed-bottom.png" alt="Music bar fixed to viewport bottom" />
-</Frame>
-<Frame caption="Attached — bar docked inside the profile card, sized to the card.">
-  <img src="/images/comparisons/audio-bar/attached.png" alt="Music bar attached inside the profile card" />
-</Frame>
-<Frame caption="Below profile — bar floats in the column below the card with a gap.">
-  <img src="/images/comparisons/audio-bar/below-profile.png" alt="Music bar below the profile card" />
-</Frame>
-<Frame caption="Hidden — controls hidden, audio still autoplays in the background.">
-  <img src="/images/comparisons/audio-bar/hidden.png" alt="Music bar hidden" />
-</Frame>
+If the player is silent, check Play, Mute, and Volume first. See [Audio won't autoplay](/troubleshooting/audio-autoplay) for browser-related issues.
 
-## Why it isn't playing
+## Owner preview
 
-See [Audio won't autoplay](/troubleshooting/audio-autoplay).
+The saved dashboard preview shows the actual music-player layout and lyric style with playback controls disabled. In [Music & lyrics](https://dashboard.biolovers.site/dashboard/edit/media/audio), **Preview player on profile** opens directly at the player. It defaults to a 390 px Phone view and follows your saved changes.
+
+Sound is off in preview. Open your public page to test playback, seeking, and lyric timing.
