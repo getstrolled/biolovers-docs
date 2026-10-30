@@ -10,8 +10,10 @@ Page on the dashboard: <a href="https://dashboard.biolovers.site/dashboard/edit/
 
 This is the **small icon row** that sits on / under your profile card. Stats like profile views, joined, location, and timezone live here.
 
-<Frame caption="The Stats panel.">
-  <img src="/images/dashboard/profile-corner.png" alt="Stats / corner line editor" />
+On [Your details → Location & stats](https://dashboard.biolovers.site/dashboard/edit/profile/corner), use **Stats & location** to choose what appears, **Layout & tooltips** to arrange it, or **Comments** to manage the public comment button. Switching tabs keeps your edits.
+
+<Frame caption="Stats and location stay together, with layout and comments in separate tabs.">
+  <img src="/images/dashboard/stats-tabs.jpg" alt="Location and stats editor with Stats and location, Layout and tooltips, and Comments tabs" />
 </Frame>
 
 ## What stats are available
@@ -28,9 +30,7 @@ Each stat has a checkbox to **show / hide** it. The Profile views and User id ch
 
 ## Positions
 
-Each stat goes into one of four position slots picked from a dropdown — see `META_SLOT_OPTS` in the code. Unlike a drag list, this is a **set of dropdowns**: pick which slot each stat lives in, and the row is built in slot order.
-
-If two stats share a slot, the later one wins (so make them unique).
+Open **Layout & tooltips**. Use each stat's position dropdown to choose a corner of the card or screen, or hide it from the stats line. Multiple stats can share a position; use **Stat order** to arrange them.
 
 ### Same stats, different placements
 
@@ -49,7 +49,7 @@ If two stats share a slot, the later one wins (so make them unique).
 Hover any stat icon and a small tooltip appears. Two looks:
 
 - **Styled** — opaque background with the card's tint.
-- **Transparent** — see-through with a soft blur.
+- **Transparent** — plain text without a tooltip panel.
 
 ## Meta line color *(Premium)*
 
@@ -57,7 +57,7 @@ A separate color picker lets Premium accounts override the meta-line color indep
 
 ## Profile comments *(Premium)*
 
-The **Profile comments** section turns the chat-bubble comment button on your public page on or off, and picks which corner it sits in.
+Open **Comments** in the [Location & stats panel](https://dashboard.biolovers.site/dashboard/edit/profile/corner) to turn the public comment button on or off and choose its corner.
 
 - **Show comments on my profile** — shows the chat bubble and lets logged-in visitors post.
 - **Comment button position** — **Top left**, **Top right**, **Bottom left**, or **Bottom right**. Default is **Top right**.
@@ -85,6 +85,6 @@ On free accounts this section is greyed out with an upgrade nudge. Full details 
     The timezone field is a free-text label, not a live clock. If you want "current time", put it in your bio or a markdown widget — the meta pill just shows the label you typed.
   </Accordion>
   <Accordion title="Can I drag the stats to reorder them?">
-    Not as a drag list. Pick a position slot per stat from its dropdown — the row renders in slot order.
+    Open **Layout & tooltips**. Pick a position for each stat, then use **Stat order** to arrange stats that share a position.
   </Accordion>
 </AccordionGroup>
